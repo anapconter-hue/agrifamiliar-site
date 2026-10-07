@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Vendor CSS -->
+        <link rel="stylesheet" href="../../assets/vendor/normalize@8.0.1.css">
+        <link rel="stylesheet"
+              href="../../assets/vendor/bootstrap@4.5.3.min.css">
+        <!-- Base CSS -->
+        <link rel="stylesheet" href="../../assets/css/base@0.0.1.css">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+              rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../../assets/img/favicon.ico?v=1" />
+        <title>
+            Rastrear AgriFamiliar
+        </title>
+	<link rel="stylesheet" href="../../assets/fontawesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/batch_tag_print@0.0.10.css">
+    </head>
+    <body>
+            <section id="main-content" class="container"></section>
+<script type="text/javascript" src="../../assets/vendor/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../../js/config.js"></script>
+<script src="../../js/core.js"></script>
+<script src="../../js/api.js"></script>
+<script src="../../js/seed.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+<script src="../../js/backend-supabase.js"></script>
+<script type="text/javascript">
+	// products/templates/products/batch_tag_print.html
+	function renderTag(instance) {
+		var e = RA.esc;
+		var i = RA.api.tagInfo(instance);
+		var qr = RA.qrDataURL(RA.batchTagURL(instance.id), 5, "H");
+		var logosHtml = function (wrapperClass) {
+			return i.certificateLogos.map(function (certificate) {
+				return '<div class="' + wrapperClass + '"><img src="' + e(certificate) + '"></div>';
+			}).join("\n\t\t\t\t\t");
+		};
+		return '' +
+	'<div class="buttons-section no-print">\n' +
+	'		<div class="field-content">\n' +
+	'			<div class="input">\n' +
+	'				<select name="select" id="shapeSelector" class="shape-selector" onchange="onToggle()">\n' +
+	'					<option selected="selected" value="a4">Etiqueta A4 (297x210mm)</option>\n' +
+	'					<option value="rect-105x74-logo">Etiqueta com logo (105x74mm)</option>\n' +
+	'					<option value="rect-105x74">Etiqueta sem logo (105x74mm)</option>\n' +
+	'					<option value="rect-105x65-logo">Etiqueta com logo (105x65mm)</option>\n' +
+	'					<option value="rect-105x65">Etiqueta sem logo (105x65mm)</option>\n' +
+	'					<option value="rect-70x50">Etiqueta (70x50mm)</option>\n' +
+	'					<option value="rect-70x50-double">Etiqueta dupla (70x50mm)</option>\n' +
+	'					<option value="square-5x5-qrcode">Etiqueta (50x50mm)</option>\n' +
+	'					<option value="square-5x5-qrcode-double">Etiqueta dupla (50x50mm)</option>\n' +
+	'\n' +
+	'				</select>\n' +
+	'				<span></span>\n' +
+	'			</div>\n' +
+	'		</div>\n' +
+	'		<button class="print-button" onclick="onPrint()">Imprimir</button>\n' +
+	'	</div>\n' +
+	'	<div id="tag-outer-wrapper" class="tag-outer-wrapper">\n' +
+	'		<!-------------------- Double square tag -------------------->\n' +
+	'		<div id="double-square-tag-wrapper" class="double-square-tag-wrapper none">\n' +
+	'			<div class="double-square-tag-wrapper-spacer">\n' +
+	'			</div>\n' +
+	'		</div>\n' +
+	'		<!------------------------ Square tag ----------------------->\n' +
+	'		<div id="square-tag-wrapper" class="square-tag-wrapper none">\n' +
+	'			<div class="info-section">\n' +
+	'				<h1>' + e(i.productFullName) + '</h1>\n' +
+	'			</div>\n' +
+	'			<div class="qr-code-section">\n' +
+	'				<p>' + e(instance.id) + '</p>\n' +
+	'				<img src="' + qr + '">\n' +
+	'			</div>\n' +
+	'			<div class="batch-images">\n' +
+	'				<p>Etiqueta gerada pelo sistema Rastrear AgriFamiliar.</p>\n' +
+	'				' + logosHtml("batch-image") + '\n' +
+	'			</div>\n' +
+	'		</div>\n' +
+	'		<!-------------------- Double rect tag ---------------------->\n' +
+	'		<div id="double-rect-tag-wrapper" class="double-rect-tag-wrapper none">\n' +
+	'			<div id="double-rect-tag" class="double-rect-tag">\n' +
+	'				<div class="double-rect-tag-spacer">\n' +
+	'				</div>\n' +
+	'			</div>\n' +
+	'		</div>\n' +
+	'		<!------------------------ Rect tag ------------------------->\n' +
+	'		<div id="rect-tag-wrapper" class="rect-tag-wrapper">\n' +
+	'			<div class="top-section">\n' +
+	'				<div class="qr-code-section">\n' +
+	'					<img src="' + qr + '">\n' +
+	'				</div>\n' +
+	'				<div class="info-section">\n' +
+	'					<h1>' + e(i.productFullName) + '</h1>\n' +
+	'					<div class="info-table">\n' +
+	'						<p><strong>Quantidade</strong>: ' + e(i.amountUnit) + '</p>\n' +
+	'						<p><strong>Colheita</strong>: ' + e(i.harvestDate) + '</p>\n' +
+	'						<p><strong>Lote</strong>: ' + e(i.batchNumber) + '</p>\n' +
+	'					</div>\n' +
+	(i.logo ?
+	'					<div class="info-farmer-logo">\n' +
+	'						<img src="' + e(i.logo) + '">\n' +
+	'					</div>\n' : '') +
+	'				</div>\n' +
+	'			</div>\n' +
+	'			<div class="middle-section">\n' +
+	'				<div class="batch-info">\n' +
+	'					<p class="farmer-name">' + e(i.farmerName) + ' (' + e(i.farmerCpfCnpj) + ')</p>\n' +
+	'					<p class="farmer-address"><span class="elips">' + e(i.shortAddress) + '</span> ' + e(i.zip) + '</p>\n' +
+	(i.technicalManager ?
+	'						<p class="farmer-tech-manager">Responsável técnico: ' + e(i.technicalManager) + '</p>\n' : '') +
+	(i.certificates.length ?
+	'						<p class="farmer-certificate">Certificado(s): ' + e(i.certificates.join(", ")) + '</p>\n' : '') +
+	(i.logo ?
+	'					<div class="farmer-logo">\n' +
+	'						<img src="' + e(i.logo) + '">\n' +
+	'					</div>\n' : '') +
+	'				</div>\n' +
+	'			</div>\n' +
+	'			<div class="batch-images">\n' +
+	'				<div class="fetaep-info">\n' +
+	'					<p>Etiqueta gerada pelo sistema Rastrear AgriFamiliar.</p>\n' +
+	'				</div>\n' +
+	'				<div class="certificate-images">\n' +
+	'					' + logosHtml("certificate-image") + '\n' +
+	'				</div>\n' +
+	'			</div>\n' +
+	'			<div class="bottom-section">\n' +
+	'				<p>Para rastrear, acesse <strong>' + e(RA.checkURL()) + '</strong> e informe o código: ' + e(instance.id) + '</p>\n' +
+	'			</div>\n' +
+	'		</div>\n' +
+	'	</div>';
+	}
+
+	function onToggle() {
+		var shapeSelector = document.getElementById("shapeSelector");
+		var rectTagWrapperElement = document.getElementById("rect-tag-wrapper");
+		var doubleRectTagWrapperElement = document.getElementById("double-rect-tag-wrapper");
+		var squareTagWrapperElement = document.getElementById("square-tag-wrapper");
+		var doubleSquareTagWrapperElement = document.getElementById("double-square-tag-wrapper");
+		var value = shapeSelector.value;
+
+		switch (value) {
+			case "a4":
+				squareTagWrapperElement.classList.add("none");
+				doubleSquareTagWrapperElement.classList.add("none");
+				doubleRectTagWrapperElement.classList.add("none");
+				rectTagWrapperElement.classList.add("a4");
+				rectTagWrapperElement.classList.remove("none");
+				rectTagWrapperElement.classList.remove("rect-105x65");
+				rectTagWrapperElement.classList.remove("rect-105x74");
+				rectTagWrapperElement.classList.remove("rect-105x65-logo");
+				rectTagWrapperElement.classList.remove("rect-105x74-logo");
+				rectTagWrapperElement.classList.remove("rect-70x50");
+				break;
+			case "rect-105x65-logo":
+				squareTagWrapperElement.classList.add("none");
+				doubleSquareTagWrapperElement.classList.add("none");
+				doubleRectTagWrapperElement.classList.add("none");
+				rectTagWrapperElement.classList.add("rect-105x65-logo");
+				rectTagWrapperElement.classList.remove("rect-105x65");
+				rectTagWrapperElement.classList.remove("rect-105x74");
+				rectTagWrapperElement.classList.remove("rect-105x74-logo");
+				rectTagWrapperElement.classList.remove("rect-70x50");
+				rectTagWrapperElement.classList.remove("none");
+				rectTagWrapperElement.classList.remove("a4");
+				break;
+			case "rect-105x65":
+				squareTagWrapperElement.classList.add("none");
+				doubleSquareTagWrapperElement.classList.add("none");
+				doubleRectTagWrapperElement.classList.add("none");
+				rectTagWrapperElement.classList.add("rect-105x65");
+				rectTagWrapperElement.classList.remove("rect-105x74");
+				rectTagWrapperElement.classList.remove("rect-105x65-logo");
+				rectTagWrapperElement.classList.remove("rect-105x74-logo");
+				rectTagWrapperElement.classList.remove("rect-70x50");
+				rectTagWrapperElement.classList.remove("none");
+				rectTagWrapperElement.classList.remove("a4");
+				break;
+			case "rect-105x74-logo":
+				squareTagWrapperElement.classList.add("none");
+				doubleSquareTagWrapperElement.classList.add("none");
+				doubleRectTagWrapperElement.classList.add("none");
+				rectTagWrapperElement.classList.add("rect-105x74-logo");
+				rectTagWrapperElement.classList.remove("rect-105x74");
+				rectTagWrapperElement.classList.remove("rect-105x65-logo");
+				rectTagWrapperElement.classList.remove("rect-70x50");
+				rectTagWrapperElement.classList.remove("rect-105x65");
+				rectTagWrapperElement.classList.remove("none");
+				rectTagWrapperElement.classList.remove("a4");
+				break;
+			case "rect-105x74":
+				squareTagWrapperElement.classList.add("none");
+				doubleSquareTagWrapperElement.classList.add("none");
+				doubleRectTagWrapperElement.classList.add("none");
+				rectTagWrapperElement.classList.add("rect-105x74");
+				rectTagWrapperElement.classList.remove("rect-70x50");
+				rectTagWrapperElement.classList.remove("rect-105x65");
+				rectTagWrapperElement.classList.remove("rect-105x65-logo");
+				rectTagWrapperElement.classList.remove("rect-105x74-logo");
+				rectTagWrapperElement.classList.remove("none");
+				rectTagWrapperElement.classList.remove("a4");
+				break;
+			case "rect-70x50":
+				squareTagWrapperElement.classList.add("none");
+				doubleSquareTagWrapperElement.classList.add("none");
+				doubleRectTagWrapperElement.classList.add("none");
+				rectTagWrapperElement.classList.add("rect-70x50");
+				rectTagWrapperElement.classList.remove("rect-105x74");
+				rectTagWrapperElement.classList.remove("rect-105x65");
+				rectTagWrapperElement.classList.remove("none");
+				rectTagWrapperElement.classList.remove("a4");
+				rectTagWrapperElement.classList.remove("rect-105x65-logo");
+				rectTagWrapperElement.classList.remove("rect-105x74-logo");
+				break;
+			case "rect-70x50-double":
+				squareTagWrapperElement.classList.add("none");
+				doubleSquareTagWrapperElement.classList.add("none");
+				doubleRectTagWrapperElement.classList.remove("none");
+				var doubleRectTagElement = document.getElementById("double-rect-tag");
+
+				var divNodes = [];
+				for (var i = 0; i < doubleRectTagElement.childNodes.length; i++) {
+				    if (doubleRectTagElement.childNodes[i].nodeType == 1) {
+				    	divNodes.push(doubleRectTagElement.childNodes[i]);
+				    }
+				}
+
+				if (divNodes.length == 1) {
+					rectTagWrapperElement.classList.remove("none");
+					firstRectTagWrapperElement = rectTagWrapperElement.cloneNode(true);
+					firstRectTagWrapperElement.setAttribute("id", "first-rect-tag-wrapper");
+					firstRectTagWrapperElement.classList.add("rect-70x50");
+					firstRectTagWrapperElement.classList.remove("a4");
+
+					secondRectTagWrapperElement = rectTagWrapperElement.cloneNode(true);
+					secondRectTagWrapperElement.setAttribute("id", "second-rect-tag-wrapper");
+					secondRectTagWrapperElement.classList.add("rect-70x50");
+					secondRectTagWrapperElement.classList.remove("a4");
+
+					doubleRectTagElement.insertBefore(firstRectTagWrapperElement, divNodes[0]);
+					doubleRectTagElement.insertBefore(secondRectTagWrapperElement, divNodes[0].nextSibling);
+				}
+
+				rectTagWrapperElement.classList.add("none");
+				break;
+			case "square-5x5-qrcode-double":
+				rectTagWrapperElement.classList.add("none");
+				doubleRectTagWrapperElement.classList.add("none");
+				doubleSquareTagWrapperElement.classList.remove("none");
+
+				var divNodes = [];
+				for (var i = 0; i < doubleSquareTagWrapperElement.childNodes.length; i++) {
+				    if (doubleSquareTagWrapperElement.childNodes[i].nodeType == 1) {
+				    	divNodes.push(doubleSquareTagWrapperElement.childNodes[i]);
+				    }
+				}
+
+				if (divNodes.length == 1) {
+					squareTagWrapperElement.classList.remove("none");
+					firstSquareTagWrapperElement = squareTagWrapperElement.cloneNode(true);
+					firstSquareTagWrapperElement.setAttribute("id", "first-square-tag-wrapper");
+					secondSquareTagWrapperElement = squareTagWrapperElement.cloneNode(true);
+					secondSquareTagWrapperElement.setAttribute("id", "second-square-tag-wrapper");
+
+					doubleSquareTagWrapperElement.insertBefore(firstSquareTagWrapperElement, divNodes[0]);
+					doubleSquareTagWrapperElement.insertBefore(secondSquareTagWrapperElement, divNodes[0].nextSibling);
+				}
+
+				squareTagWrapperElement.classList.add("none");
+				break;
+			case "square-5x5-qrcode":
+				rectTagWrapperElement.classList.add("none");
+				doubleSquareTagWrapperElement.classList.add("none");
+				squareTagWrapperElement.classList.remove("none");
+				doubleRectTagWrapperElement.classList.add("none");
+				break;
+			default:
+				rectTagWrapperElement.classList.remove("a4");
+				rectTagWrapperElement.classList.remove("rect-105x65");
+				rectTagWrapperElement.classList.remove("rect-105x74");
+				rectTagWrapperElement.classList.remove("rect-70x50");
+				rectTagWrapperElement.classList.remove("rect-105x65-logo");
+				rectTagWrapperElement.classList.remove("rect-105x74-logo");
+		}
+	}
+	function onPrint() {
+		var shapeSelector = document.getElementById("shapeSelector");
+		var value = shapeSelector.value;
+		var tag = document.getElementById("tag-outer-wrapper");
+		var format;
+		var filename;
+		var scale;
+
+		switch (value) {
+			case "a4":
+				format = [210, 297];
+				scale = 5;
+				filename = "EtiquetaA4.pdf"
+				break;
+			case "rect-105x65-logo":
+			case "rect-105x65":
+				format = [74, 105];
+				scale = 10;
+				filename = "Etiqueta105x65.pdf"
+				break;
+			case "rect-105x74-logo":
+			case "rect-105x74":
+				format = [74, 105];
+				scale = 10;
+				filename = "Etiqueta105x74.pdf"
+				break;
+			case "rect-70x50":
+				format = [70, 50];
+				scale = 10;
+				filename = "Etiqueta70x50.pdf"
+				break;
+			case "rect-70x50-double":
+				format = [102, 70];
+				scale = 10;
+				filename = "Etiqueta70x50dupla.pdf"
+				break;
+			case "square-5x5-qrcode-double":
+				format = [102, 50];
+				scale = 10;
+				filename = "Etiqueta50x50dupla.pdf"
+				break;
+			case "square-5x5-qrcode":
+				format = [50, 50];
+				scale = 10;
+				filename = "Etiqueta50x50.pdf"
+				break;
+			default:
+				format = [210, 297];
+				scale = 5;
+				filename = "EtiquetaA4.pdf"
+		}
+
+		var opt = {
+			margin: 0.8,
+			filename: filename,
+			html2canvas: {scale: scale},
+			jsPDF: {unit: "mm", format: format, orientation: "landscape"}
+		};
+
+		var worker = html2pdf().set(opt).from(tag).toPdf();
+		worker.save();
+	}
+
+	(function () {
+		var id = RA.idFromPath("/etiqueta/imprimir/");
+		var notFound = function () {
+			document.body.innerHTML = "<h1>Not Found</h1><p>The requested resource was not found on this server.</p>";
+		};
+		if (!id || !RA.UUID_RE.test(id)) { notFound(); return; }
+		RA.api.ready().then(function () {
+			return RA.api.getBatchTag(id);
+		}).then(function (tag) {
+			if (!tag || !tag.batch) { notFound(); return; }
+			document.getElementById("main-content").innerHTML = renderTag(tag);
+		}).catch(function (err) {
+			console.error(err);
+			notFound();
+		});
+	})();
+</script>
+    </body>
+</html>

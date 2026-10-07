@@ -1,0 +1,335 @@
+/* ========================================================================== *\
+    Wagtail Model Chooser CSS
+\* ========================================================================== */
+
+.admin-modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1300;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.admin-modal__header {
+    padding: 1rem;
+    background: #374646;
+}
+
+
+.admin-modal__header h2 {
+    color: #fff;
+    margin: 0;
+}
+
+.admin-modal__content_wrapper {
+    background-color: #fff;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-modal__content {
+    overflow-y: auto;
+    flex: 3;
+}
+
+.admin-modal__filters {
+    flex: 1;
+}
+
+.admin-modal__filters_wrapper {
+    height: 100%;
+}
+
+.admin-modal__filters_group {
+    padding-bottom: 10px;
+}
+
+.admin-modal__filters_content {
+    overflow-y: auto;
+    height: calc(100% - 54px);
+}
+
+.admin-modal__filters h2 {
+    background-color: #fafafa;
+    font-size: 13px;
+    line-height: 42px;
+    margin-top: 0;
+    padding-left: 8px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.admin-modal__filters li {
+    list-style-type: none;
+    margin: 0 0 4px;
+    padding-left: 0;
+}
+
+.admin-modal__filters p {
+    padding: 0px 10px;
+}
+
+.admin-modal__filters ul {
+    padding: 0px 10px;
+}
+
+.admin-modal__filters a {
+    font-family: Open Sans,Arial,sans-serif;
+    border-radius: 3px;
+    width: auto;
+    line-height: 1.2em;
+    padding: 8px 12px;
+    font-size: .9em;
+    font-weight: 400;
+    vertical-align: middle;
+    display: block;
+    background-color: #fff;
+    border: 1px solid #43b1b0;
+    color: #43b1b0;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-font-smoothing: auto;
+    -moz-appearance: none;
+}
+
+.admin-modal__filters li a {
+    cursor: pointer;
+}
+
+
+.admin-modal__filters li.selected a {
+    color: #fff!important;
+    border-color: #43b1b0!important;
+    background-color: #43b1b0;
+}
+
+.admin-modal__dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: dialogIn .35s cubic-bezier(0.075, 0.82, 0.165, 1) .2s backwards;
+    height: 65%;
+}
+
+@media only screen and (min-width: 50rem) {
+    .admin-modal__dialog {
+        min-width: 70%;
+    }
+}
+
+.admin-modal--exit .admin-modal__dialog {
+    animation: dialogOut .3s ease forwards;
+}
+
+.admin-modal--exit.admin-modal:before {
+    animation: dialogFadeOut .3s ease .35s forwards;
+}
+
+
+.chooser-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+
+.chooser-table thead {
+    background: #E9EAEA;
+}
+
+.chooser-table thead td {
+    padding: .75rem 1rem;
+}
+
+
+.chooser__item:last-child > .chooser__cell {
+    border-bottom-width: 0;
+}
+
+.chooser__item:hover {
+    background: #666;
+    cursor: pointer;
+    color: #fff;
+}
+
+.chooser__item:hover a {
+    color: #fff;
+}
+
+.chooser__cell {
+    padding: .75rem 1rem;
+    border-bottom: solid 1px #eee;
+}
+
+
+.admin-modal:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    animation: dialogFadeIn .2s ease backwards;
+}
+
+
+.admin-modal__actions {
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .75rem 1rem;
+    background: #f5f5f5;
+}
+
+.admin-modal__action {
+    float: left;
+    width: 50%;
+    margin-bottom: 0;
+}
+
+.admin-modal__action input[type='text'] {
+    padding: .5em;
+    background: #fff;
+    border-color: #ccc;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+
+.admin-modal__action:last-child {
+    /*padding-top: .5rem;*/
+}
+
+.admin-modal__pagination {
+    margin-right: 1.5rem;
+    display: inline-block;
+}
+
+.admin-modal__results {
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+
+.admin-modal__action > p {
+    margin-top: .5rem;
+    margin-bottom: 0;
+}
+
+.admin-modal__action:last-child {
+    text-align: right;
+}
+
+
+
+.struct-block .model-chooser {
+    padding: 1rem 0;
+}
+
+.model-chooser__label:not(:empty) {
+    margin-right: .5rem;
+    display: inline-block;
+    flex-grow: 1;
+}
+
+.model-chooser__label:not(:empty) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.model-chooser__label + span {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.model-chooser__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.model-chooser__thumb {
+    height: 100px;
+    padding: 20px;
+}
+
+.button--disabled {
+    pointer-events: none;
+    opacity: .7;
+    background: rgba(0,0,0,0.4);
+    border-color: rgba(0,0,0,0.25);
+    color: #ddd;
+}
+
+
+/* ========================================================================== *\
+    Animations
+\* ========================================================================== */
+
+
+@keyframes dialogIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+
+@keyframes dialogOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+}
+
+@keyframes dialogFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes dialogFadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ========================================================================== *\
+    Shame
+\* ========================================================================== */
+
+/* Overwrite for https://github.com/wagtail/wagtail/blob/3923ee668c292ed2d1d2e76ae1a728da20b9be68
+/wagtail/wagtailadmin/static_src/wagtailadmin/scss/layouts/page-editor.scss#L305 */
+.object.collapsible .admin-modal__header h2:before {
+    content: '';
+}

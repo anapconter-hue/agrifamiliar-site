@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="logo_agrifam.svg"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   id="svg1082"
+   version="1.1"
+   viewBox="0 0 220 109.87"
+   height="109.87mm"
+   width="220mm">
+  <defs
+     id="defs1076" />
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="29"
+     inkscape:window-x="2123"
+     inkscape:window-height="1035"
+     inkscape:window-width="1252"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="560"
+     inkscape:cx="400"
+     inkscape:zoom="0.35"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata1079">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <g
+       transform="matrix(0.98635379,0,0,0.98635379,66.753083,-16.646347)"
+       id="g1748">
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path2"
+         style="fill:#005b27;fill-rule:evenodd;stroke-width:0.264583"
+         d="M -67.676612,16.876649 V 128.26621 H 155.36709 V 16.876649 Z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path70"
+         style="fill:#9aca3c;fill-rule:evenodd;stroke-width:0.264583"
+         d="M 139.584,58.904124 H 31.371402 V 57.19055 H 139.584 Z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path72"
+         style="fill:#9aca3c;fill-rule:evenodd;stroke-width:0.264583"
+         d="M 139.584,87.780828 H 31.371402 V 86.067254 H 139.584 Z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path74"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 40.020738,40.23695 -1.6714,4.964641 h 3.2389 z m 3.63223,11.549988 -0.863,-2.769976 h -5.72158 l -0.91546,2.769976 h -4.782981 l 6.768461,-18.606717 h 3.52886 l 6.76772,18.606717 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path76"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 57.316708,37.911765 c -0.34065,-0.444791 -0.9937,-0.811054 -1.82988,-0.811054 -0.83619,0 -1.48924,0.366263 -1.82722,0.811054 -0.41992,0.547952 -0.6823,1.174406 -0.6823,4.571576 0,3.398124 0.26238,3.997537 0.6823,4.547421 0.33798,0.445532 0.99103,0.836189 1.82722,0.836189 0.1307,0 0.23579,0 0.3665,-0.02683 l -1.17684,-1.173427 2.32785,-2.326878 0.88691,0.887889 c 0.0524,-0.625502 0.10412,-1.489234 0.10412,-2.744365 0,-3.39717 -0.26067,-4.023624 -0.67866,-4.571575 z m 3.21379,14.60746 -1.43582,-1.438248 c -0.99446,0.575495 -2.1713,0.862753 -3.60785,0.862753 -2.27201,0 -3.84025,-0.732049 -5.20121,-2.090579 -1.95792,-1.96035 -1.87965,-4.572291 -1.87965,-7.36981 0,-2.795084 -0.0783,-5.40848 1.87965,-7.369095 1.36096,-1.358265 2.9292,-2.0896 5.20121,-2.0896 2.27443,0 3.84122,0.731335 5.2012,2.0896 1.9589,1.960615 1.88135,4.574011 1.88135,7.369095 0,2.326138 0.0524,4.547421 -1.07175,6.351218 l 1.35829,1.35927 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path78"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 71.424528,51.94373 c -3.86781,0 -7.02842,-2.612681 -7.02842,-6.690439 v -12.07307 h 4.57155 v 11.968956 c 0,1.725772 0.94105,2.717536 2.45687,2.717536 1.51482,0 2.50854,-0.991764 2.50854,-2.717536 V 33.180221 h 4.57327 v 12.07307 c 0,4.077758 -3.21402,6.690439 -7.08181,6.690439 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path80"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 80.960038,33.180486 h 4.57131 v 18.605949 h -4.57131 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path82"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="M 101.15618,37.259223 V 51.7867 H 96.583148 V 37.259223 h -4.57425 v -4.078499 h 13.718862 v 4.078499 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path84"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="M 107.39818,51.786938 V 33.180962 h 12.64759 v 4.078499 h -8.07456 v 3.108193 h 6.89772 v 4.076038 h -6.89772 v 3.266467 h 8.07456 v 4.076779 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path86"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 134.93951,51.786938 v -8.910743 l -2.63925,4.59986 h -2.92748 l -2.63927,-4.59986 v 8.910743 h -4.57155 V 33.180962 h 4.49328 l 4.18188,8.206978 4.18092,-8.206978 h 4.49304 v 18.605976 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path88"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 35.943458,97.774776 v 3.237914 h 6.84162 v 4.04265 h -6.84162 v 7.12719 H 31.407994 V 93.731387 h 12.541994 v 4.043389 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path90"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 50.998648,100.72837 -1.65772,4.92321 h 3.21402 z m 3.60201,11.4544 -0.85424,-2.74778 h -5.67624 l -0.90664,2.74778 h -4.74277 l 6.7119,-18.451119 h 3.49885 l 6.71163,18.451119 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path92"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 72.869868,112.18253 v -8.83759 l -2.61683,4.56131 h -2.90336 l -2.61704,-4.56131 v 8.83759 h -4.53451 V 93.731387 h 4.45548 l 4.14824,8.136523 4.14629,-8.136523 h 4.45621 v 18.451143 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path94"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 80.072148,93.731387 h 4.53451 v 18.451143 h -4.53451 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path96"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="M 87.353928,112.18253 V 93.731387 h 4.53549 v 14.407993 h 7.74755 v 4.04315 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path98"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 101.29493,93.731387 h 4.53549 v 18.451143 h -4.53549 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path100"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 115.20863,100.72837 -1.65603,4.92321 h 3.21233 z m 3.60272,11.4544 -0.8542,-2.74778 h -5.676 l -0.90665,2.74778 h -4.74276 l 6.71091,-18.451119 h 3.49957 l 6.7119,18.451119 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path102"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 131.48333,97.798906 h -2.56534 v 3.731734 h 2.56534 c 1.24124,0 1.96917,-0.90665 1.96917,-1.865972 0,-0.959088 -0.72793,-1.865762 -1.96917,-1.865762 z m 2.22814,14.383624 -3.26573,-6.86676 h -1.52775 v 6.86676 H 124.3825 V 93.730673 h 7.30716 c 4.09408,0 6.29806,2.901632 6.29806,5.933995 0,2.514622 -1.55628,4.095802 -3.00577,4.821022 l 3.99071,7.69684 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path104"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 37.217128,71.272733 -1.13053,3.355949 h 2.19032 z m 2.45417,7.80632 -0.58234,-1.8728 h -3.86779 l -0.61939,1.8728 h -3.23109 l 4.57473,-12.574667 h 2.38394 l 4.57497,12.574667 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path106"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 51.243488,77.773202 c -1.07712,1.111514 -2.27788,1.412663 -3.65614,1.412663 -1.4668,0 -2.57903,-0.495511 -3.4969,-1.412663 -1.32487,-1.326568 -1.27074,-3.091842 -1.27074,-4.981734 0,-1.889151 -0.0541,-3.655404 1.27074,-4.980252 0.91787,-0.916913 1.97866,-1.412425 3.4969,-1.412425 3.23207,0 4.60936,2.099839 4.91127,4.167981 h -3.10893 c -0.24702,-0.953214 -0.74256,-1.412663 -1.80234,-1.412663 -0.56428,0 -0.98933,0.246062 -1.21733,0.547237 -0.28384,0.370655 -0.46114,0.793989 -0.46114,3.090122 0,2.296901 0.1773,2.738279 0.46114,3.108193 0.228,0.300937 0.65305,0.529907 1.21733,0.529907 0.65304,0 1.09516,-0.194601 1.37826,-0.493077 0.35264,-0.355309 0.47578,-0.866167 0.47578,-1.34366 V 74.41556 h -1.85404 v -2.578285 h 4.9276 v 1.749901 c 0,2.031074 -0.31824,3.214767 -1.27146,4.186026 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path108"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 58.735718,69.277987 h -1.74797 v 2.541958 h 1.74797 c 0.8491,0 1.3412,-0.617432 1.3412,-1.270477 0,-0.654764 -0.4921,-1.271481 -1.3412,-1.271481 z m 1.51921,9.801066 -2.22615,-4.680797 h -1.04103 v 4.680797 h -3.09086 V 66.504386 h 4.98002 c 2.79069,0 4.29185,1.977919 4.29185,4.045082 0,1.71114 -1.05978,2.789952 -2.04837,3.284485 l 2.71949,5.2451 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path110"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 64.638018,66.504624 h 3.09012 v 12.574694 h -3.09012 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path112"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 73.877718,79.185627 c -1.46679,0 -2.57828,-0.495512 -3.49787,-1.412663 -1.32389,-1.326568 -1.27246,-3.091842 -1.27246,-4.981734 0,-1.889151 -0.0514,-3.655404 1.27246,-4.980279 0.91959,-0.916887 2.03108,-1.412398 3.49787,-1.412398 2.38369,0 4.30893,1.322916 4.76764,4.097496 h -3.14357 c -0.19434,-0.707178 -0.5833,-1.342178 -1.607,-1.342178 -0.56671,0 -0.98835,0.229711 -1.22074,0.529166 -0.28046,0.370682 -0.47479,0.813012 -0.47479,3.108193 0,2.296874 0.19433,2.738252 0.47479,3.107955 0.23239,0.301148 0.65403,0.530145 1.22074,0.530145 1.0237,0 1.41266,-0.635741 1.607,-1.341226 h 3.14357 c -0.45871,2.77167 -2.38395,4.097523 -4.76764,4.097523 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path114"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 84.034808,79.185627 c -2.61437,0 -4.75033,-1.766993 -4.75033,-4.520856 v -8.160385 h 3.08917 v 8.088207 c 0,1.166362 0.63648,1.836737 1.66116,1.836737 1.0237,0 1.69381,-0.670375 1.69381,-1.836737 v -8.088207 h 3.09187 v 8.160385 c 0,2.753863 -2.17228,4.520856 -4.78568,4.520856 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path116"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="M 90.344598,79.079318 V 66.504624 h 3.09184 v 9.819111 h 5.28021 v 2.755583 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path118"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 103.7713,69.260683 v 9.819111 h -3.09184 v -9.819111 h -3.090892 v -2.756297 h 9.271162 v 2.756297 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path120"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 112.44429,79.185627 c -2.61194,0 -4.74959,-1.766993 -4.74959,-4.520856 v -8.160385 h 3.08991 v 8.088207 c 0,1.166362 0.63598,1.836737 1.65968,1.836737 1.02444,0 1.69553,-0.670375 1.69553,-1.836737 v -8.088207 h 3.09184 v 8.160385 c 0,2.753863 -2.17226,4.520856 -4.78737,4.520856 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path122"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 123.6468,69.277987 h -1.75064 v 2.541958 h 1.75064 c 0.84738,0 1.34096,-0.617432 1.34096,-1.270477 0,-0.654764 -0.49358,-1.271481 -1.34096,-1.271481 z m 1.51921,9.801066 -2.22642,-4.680797 h -1.04343 v 4.680797 H 118.8077 V 66.504386 h 4.98102 c 2.78972,0 4.29088,1.977919 4.29088,4.045082 0,1.71114 -1.05979,2.789952 -2.04814,3.284485 l 2.71923,5.2451 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path124"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 134.08797,71.272733 -1.12882,3.355949 h 2.18861 z m 2.45586,7.80632 -0.58401,-1.8728 h -3.86609 l -0.62013,1.8728 h -3.23133 l 4.57425,-12.574667 h 2.38368 l 4.57499,12.574667 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path126"
+         style="fill:#fff200;fill-rule:evenodd;stroke-width:0.264583"
+         d="m 7.8566121,68.238545 c 0,0 1.665208,3.935756 1.254257,9.582229 2.8621559,0.811133 6.0622389,-0.161846 7.9664719,-2.697401 2.46626,-3.272446 1.847612,-7.94713 -1.467776,-10.4199 -3.273293,-2.471737 -7.9526079,-1.812025 -10.4267529,1.464866 -1.570435,2.097907 -1.870366,4.74091 -1.041083,7.022412 1.658038,-1.199859 2.961746,-2.759525 3.714883,-4.952206 z m 13.9080869,7.41418 c -1.849305,5.390542 -7.957397,5.886 -13.8085249,8.01968 -0.741653,2.278909 -1.879415,4.681881 -3.580897,7.113587 -2.424007,3.461491 -5.325348,6.120236 -8.285718,8.192294 -0.165444,3.525994 0.77724,5.993974 0.77724,5.993974 -1.186498,3.26766 -1.659044,8.11549 -1.659044,8.11549 0.648097,0.49257 1.299925,0.16904 1.299925,0.16904 -1.217295,-5.6506 3.524303,-8.3208 3.524303,-8.3208 2.252556,-0.67906 12.7419359,-2.82522 19.0365059,-11.814282 6.29457,-8.990092 2.69621,-17.468983 2.69621,-17.468983 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path128"
+         style="fill:#9aca3c;fill-rule:evenodd;stroke-width:0.264583"
+         d="m -9.1456459,56.400293 c 0,0 1.970802,4.652301 1.591654,11.40026 3.218207,0.314458 6.525895,-1.006184 8.619517,-3.795818 3.184498,-4.223861 2.379874,-10.257711 -1.893279,-13.451787 -4.226269,-3.186721 -10.2684791,-2.335715 -13.4601751,1.893464 -2.443321,3.260963 -2.502349,7.540281 -0.509508,10.800742 2.557965,-1.576414 4.566735,-3.682895 5.6517911,-6.846861 z m 16.263144,8.288813 c -2.17334,6.326055 -8.883174,7.430612 -15.757234,9.646232 -0.895641,3.199025 -2.4010671,6.62186 -4.8322441,10.097056 -3.632253,5.186574 -8.130567,8.946118 -12.575302,11.694848 0.04413,3.825399 1.027906,6.404928 1.027906,6.404928 -1.535536,4.22079 -2.14204,10.47858 -2.14204,10.47858 0.835263,0.63133 1.673595,0.21609 1.673595,0.21609 -1.570434,-7.2934 4.550305,-10.74222 4.550305,-10.74222 2.908723,-0.87341 16.4472401,-3.641324 24.5736791,-15.249257 8.1259099,-11.601635 3.481335,-22.546257 3.481335,-22.546257 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path130"
+         style="fill:#2da44a;fill-rule:evenodd;stroke-width:0.264583"
+         d="m -50.654326,113.19178 c 0,0 -1.042961,0.5184 -2.080948,-0.26572 0,0 0.754327,-7.78169 2.661629,-13.028506 0,0 -4.588298,-11.875875 3.538141,-23.912221 10.337959,-15.316676 31.762726,-9.57625 36.41807,-23.133447 0,0 5.7742931,13.603208 -4.327022,28.029694 -10.105443,14.428205 -26.937811,17.872763 -30.550194,18.962264 0,0 -7.613333,4.284076 -5.659676,13.347936 z" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/Users/rodrigosuhr/Dev/fetaep/fetaep-web/products/static/products/images/logo_agrifam.png"
+         id="path132"
+         style="fill:#2da44a;fill-rule:evenodd;stroke-width:0.264583"
+         d="m -34.381075,54.35509 c 5.245603,4.014973 12.75887,2.949601 16.740637,-2.358126 3.956288,-5.249915 2.958677,-12.751011 -2.351458,-16.720132 -5.257085,-3.964146 -12.769823,-2.903749 -16.735848,2.349765 -3.97256,5.298652 -2.897769,12.768448 2.346669,16.728493 z" />
+    </g>
+  </g>
+</svg>

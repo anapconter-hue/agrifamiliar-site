@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>Gerenciar assinatura</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <!--
+        No sistema original esta janela mostrava a página de gerenciamento do Pagar.me
+        (troca de cartão, forma de pagamento e cancelamento). Nesta versão ainda não há
+        cobrança ligada; a página permite trocar a forma de pagamento e cancelar a assinatura.
+    -->
+    <link rel="stylesheet" href="../assets/wagtail/css/normalize.css" />
+    <link rel="stylesheet" href="../assets/css/signup@0.0.3.css" />
+    <style>
+        body { font-family: "Open Sans", Arial, sans-serif; color: #333; background: #fff; margin: 0; padding: 30px; }
+        h2 { font-size: 18px; margin: 0 0 8px; }
+        p { margin: 4px 0; }
+        .box { border: 1px solid #e6e6e6; border-radius: 5px; padding: 20px; margin-bottom: 20px; }
+        .methods { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .methods .payment-method-wrapper { margin: 0; max-width: 100%; flex: 1; min-width: 220px; }
+        .actions { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+        button { font-family: inherit; font-size: 14px; border-radius: 3px; padding: 10px 18px; cursor: pointer; border: 1px solid #007d7e; background: #007d7e; color: #fff; }
+        button.secondary { background: #fff; color: #cd3238; border-color: #cd3238; }
+        button:disabled { opacity: .5; cursor: default; }
+        .msg { margin-top: 12px; font-weight: 600; }
+        .msg.ok { color: #157b57; }
+        .msg.err { color: #cd3238; }
+    </style>
+</head>
+<body>
+    <div id="app"><p>Carregando...</p></div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/core.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/seed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+    <script src="../js/backend-supabase.js"></script>
+    <script>
+        (function () {
+            var api = RA.api, e = RA.esc;
+            var app = document.getElementById("app");
+
+            function render(sub, message, ok) {
+                if (!sub) {
+                    app.innerHTML = "<p>Nenhuma assinatura encontrada.</p>";
+                    return;
+                }
+                var canceled = sub.status === api.SUB.CANCELED;
+                var methods = RA.config.SUBSCRIPTION_PAYMENT_METHODS.map(function (m) {
+                    return '<div class="payment-method-wrapper' + (sub.payment_method === m.payment_method ? " selected" : "") + '" data-method="' + m.payment_method + '">' +
+                        '<div class="radio-selection"></div><div class="payment-method-content"><p class="payment-method-name">' + e(m.name) + '</p>' +
+                        '<p class="payment-method-description">' + m.description + "</p></div></div>";
+                }).join("");
+                app.innerHTML =
+                    '<div class="box"><h2>' + e(api.planName(sub.plan)) + "</h2>" +
+                    "<p>Situação: " + e(api.subStatusDisplay(sub)) + "</p>" +
+                    "<p>Próxima cobrança: " + e(sub.current_period_end ? RA.fmtDate(sub.current_period_end) : "-") + "</p></div>" +
+                    '<div class="box"><h2>Forma de pagamento</h2><div class="methods">' + methods + "</div></div>" +
+                    '<div class="actions"><button type="button" id="save"' + (canceled ? " disabled" : "") + '>Salvar forma de pagamento</button>' +
+                    '<button type="button" class="secondary" id="cancel"' + (canceled ? " disabled" : "") + ">Cancelar assinatura</button></div>" +
+                    (message ? '<p class="msg ' + (ok ? "ok" : "err") + '">' + e(message) + "</p>" : "");
+                var chosen = sub.payment_method;
+                Array.prototype.forEach.call(app.querySelectorAll(".payment-method-wrapper"), function (el) {
+                    el.onclick = function () {
+                        if (canceled) return;
+                        chosen = el.getAttribute("data-method");
+                        Array.prototype.forEach.call(app.querySelectorAll(".payment-method-wrapper"), function (x) {
+                            x.classList.toggle("selected", x === el);
+                        });
+                    };
+                });
+                document.getElementById("save").onclick = function () {
+                    api.setSubscriptionPaymentMethod(sub, chosen).then(function () {
+                        render(sub, "Forma de pagamento atualizada.", true);
+                    }, function () {
+                        render(sub, "Não foi possível alterar a forma de pagamento. Tente novamente.", false);
+                    });
+                };
+                document.getElementById("cancel").onclick = function () {
+                    if (!window.confirm("Tem certeza que deseja cancelar a sua assinatura?")) return;
+                    api.cancelSubscription(sub).then(function () {
+                        render(sub, "Assinatura cancelada.", true);
+                    }, function () {
+                        render(sub, "Não foi possível cancelar a assinatura. Tente novamente.", false);
+                    });
+                };
+            }
+
+            api.ready()
+                .then(function () { return api.currentUser("admin"); })
+                .then(function (user) { return api.profileForUser(user); })
+                .then(function (profile) { return api.subscriptionForProfile(profile); })
+                .then(function (sub) { render(sub); })
+                .catch(function () { render(null); });
+        })();
+    </script>
+</body>
+</html>

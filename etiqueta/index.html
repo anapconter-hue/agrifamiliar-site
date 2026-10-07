@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Vendor CSS -->
+        <link rel="stylesheet" href="../assets/vendor/normalize@8.0.1.css">
+        <link rel="stylesheet"
+              href="../assets/vendor/bootstrap@4.5.3.min.css">
+        <!-- Base CSS -->
+        <link rel="stylesheet" href="../assets/css/base@0.0.1.css">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+              rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../assets/img/favicon.ico?v=1" />
+        <title>
+            Rastrear AgriFamiliar
+        </title>
+        <link rel="stylesheet" type="text/css" href="../assets/css/batch_tag_view@0.0.2.css">
+    </head>
+    <body>
+                <header id="main-header">
+                    <img id="header-logo" src="../assets/img/logo.svg">
+                    <h1>Rastreamento de etiquetas</h1>
+                </header>
+            <section id="main-content" class="container"></section>
+                <footer id="main-footer">
+                    <p>Sistema Rastrear AgriFamiliar</p>
+                    <p id="footer-contacts"></p>
+                </footer>
+            <script src="../assets/vendor/jquery-3.5.1.slim.min.js"></script>
+            <script src="../assets/vendor/bootstrap@4.5.3.bundle.min.js"></script>
+            <script src="../js/config.js"></script>
+            <script src="../js/core.js"></script>
+            <script src="../js/api.js"></script>
+            <script src="../js/seed.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+            <script src="../js/backend-supabase.js"></script>
+            <script src="../js/maps.js"></script>
+            <script>
+            (function () {
+                var e = RA.esc;
+                document.getElementById("footer-contacts").textContent = RA.config.FOOTER_EXTERNAL;
+
+                function notFound() {
+                    document.open();
+                    document.write("<!doctype html><html lang=\"en\"><head><title>Not Found</title></head><body><h1>Not Found</h1><p>The requested resource was not found on this server.</p></body></html>");
+                    document.close();
+                }
+
+                // products/templates/products/batch_tag_view.html
+                function render(tag) {
+                    var i = RA.api.tagInfo(tag);
+                    var b = tag.batch;
+                    var html = '' +
+'    <div class="row" id="basic-info">' +
+'        <div class="col-md-6">' +
+'            <div class="content-box">' +
+'                <div class="content-title"><p>Código</p></div>' +
+'                <div class="content-value">' + e(tag.id) + '</div>' +
+'            </div>' +
+'        </div>' +
+'        <div class="col-md-6">' +
+'            <div class="content-box">' +
+'                <div class="content-title"><p>Emissão</p></div>' +
+'                <div class="content-value">' + e(RA.fmtDate(tag.date)) + '</div>' +
+'            </div>' +
+'        </div>' +
+'    </div>' +
+'    <div class="row" id="product-info">' +
+'        <div class="col-md-12">' +
+'            <div class="content-box">' +
+'                <div class="content-title"><p>Produto</p></div>' +
+'                <div class="content-value">' +
+'                    <div id="product-data">' +
+'                        <h1>' + e(i.productFullName) + '</h1>' +
+'                        <p><strong>Quantidade</strong>: ' + e(i.amountUnit) + '</p>' +
+'                        <p><strong>Colheita</strong>: ' + e(i.harvestDate) + '</p>' +
+'                        <p><strong>Lote</strong>: ' + e(b.number) + '</p>' +
+'                    </div>' +
+'                    <div id="product-images">' +
+                        (i.batchImage ? '<img class="batch-image" src="' + e(i.batchImage) + '">' : '') +
+'                    <div id="product-labels">' +
+                        i.certificateLogos.map(function (logo) { return '<img id="img-cert" src="' + e(logo) + '">'; }).join('') +
+'                    </div>' +
+'                </div>' +
+'            </div>' +
+'        </div>' +
+'    </div>' +
+'</div>' +
+'<div class="row" id="origin-info">' +
+'    <div class="col-md-12">' +
+'        <div class="content-box">' +
+'            <div class="content-title"><p>Origem</p></div>' +
+'            <div class="content-value">' +
+'                <div id="batch-data">' +
+                    (i.logo && i.hasCoordinates ? '<img class="farm-logo" src="' + e(i.logo) + '">' : '') +
+'                    <p><strong>Produtor</strong>: ' + e(i.farmerName) + ' (' + e(i.farmName) + ')</p>' +
+'                    <p><strong>CNPJ/CPF</strong>: ' + e(i.farmerCpfCnpj) + '</p>' +
+'                    <p><strong>Endereço</strong>: ' + e(i.address) + '</p>' +
+                    (i.technicalManager ? '<p><strong>Responsável técnico</strong>: ' + e(i.technicalManager) + '</p>' : '') +
+                    i.certificates.map(function (c) { return '<p><strong>Certificado</strong>: ' + e(c) + '</p>'; }).join('') +
+'            </div>' +
+'            <div id="farm-map-wrapper">' +
+                (i.logo && !i.hasCoordinates ? '<img class="farm-logo" src="' + e(i.logo) + '">' : '') +
+'            </div>' +
+'    </div>' +
+'</div>' +
+'</div>' +
+'</div>' +
+(i.description ?
+'<div class="row" id="farmer-about">' +
+'<div class="col-md-12">' +
+'    <div class="content-box">' +
+'        <div class="content-title">' +
+'            <p>Sobre</p>' +
+'        </div>' +
+'        <div class="content-value">' +
+'            <div id="farmer-description">' + e(i.description) + '</div>' +
+'            <div>' +
+                (i.profileImage ? '<img class="profile-image" src="' + e(i.profileImage) + '">' : '') +
+'        </div>' +
+'    </div>' +
+'</div>' +
+'</div>' +
+'</div>' : '');
+                    document.getElementById("main-content").innerHTML = html;
+                    if (i.hasCoordinates) {
+                        RA.maps.farmMap(document.getElementById("farm-map-wrapper"), i.lat, i.lng, "farm-map");
+                    }
+                }
+
+                var id = RA.idFromPath("/etiqueta/");
+                if (!id || !RA.UUID_RE.test(id)) { notFound(); return; }
+                RA.api.ready().then(function () {
+                    return RA.api.getBatchTag(id);
+                }).then(function (tag) {
+                    if (!tag || !tag.batch) { notFound(); return; }
+                    render(tag);
+                }).catch(function (err) {
+                    console.error(err);
+                    notFound();
+                });
+            })();
+            </script>
+    </body>
+</html>

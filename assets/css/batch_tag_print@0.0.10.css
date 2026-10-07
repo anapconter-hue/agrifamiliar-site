@@ -1,0 +1,851 @@
+html {
+    font-size:  1cm;
+}
+
+body {
+    font-family: 'Helvetica', sans-serif;
+}
+
+p { margin:0 }
+
+#main-content {
+    max-width: initial !important;
+}
+
+.tag-outer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rect-tag-wrapper {
+    border: 0.025rem solid rgba(0,0,0);
+    border-radius: 0.3rem;
+    height: 20.8rem;
+    width: 29.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.rect-tag-wrapper.none {
+    display: none;
+}
+
+/* --------------------- Batch tag 297x210mm (A4) --------------------- */
+
+.rect-tag-wrapper.a4 {
+    height: 20.8rem;
+    width: 29.5rem;
+}
+
+.top-section {
+    display: flex;
+    padding: 0.1rem 0.2rem 0.0rem 0.2rem;
+}
+
+.qr-code-section {
+    width: 9.5rem;
+    height: 9.5rem;
+    font-size: 0.4rem;
+    text-align: center;
+}
+
+.qr-code-section img {
+    width: 9.5rem;
+    height: 9.5rem;
+}
+
+.info-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-section h1 {
+    font-weight: 700;
+    margin: 0;
+    font-size: 1rem;
+    max-height: 3.6rem;
+    overflow: hidden;
+}
+
+.info-table {
+    text-transform: uppercase;
+    text-align: left;
+    display: inline-block;
+    font-size: 0.8rem;
+    padding-top: 0.2rem;
+}
+
+.info-table p {
+    max-height: 1rem;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.info-farmer-logo {
+    display: none;
+}
+
+.middle-section {
+    padding: 0.2rem;
+    border-top: 0.025rem solid rgba(0,0,0);
+    flex: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.batch-info {
+    flex-direction: column;
+    font-size: 0.6rem;
+    flex: 1;
+    display: flex;
+}
+
+.batch-info p {
+    max-height: 1rem;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.farmer-address p {
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.elips {
+  display: inline-block;
+  vertical-align: bottom;
+  white-space: nowrap;
+  max-width: 24rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.farmer-logo {
+    display: flex;
+    align-items: center;
+    width: 5rem;
+    height: 3rem;
+    margin-top: 0.5rem;
+}
+
+.farmer-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.batch-images {
+    display: flex;
+    flex-direction: row;
+}
+
+.certificate-images {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    padding: 0.5rem;
+}
+
+.certificate-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 1.5rem;
+    margin-left: 0.3rem;
+}
+
+.certificate-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.fetaep-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+    font-size: 0.5rem;
+    justify-content: flex-end;
+    font-weight: 700;
+}
+
+.bottom-section {
+    text-align: center;
+    border-top: 0.025rem solid rgba(0,0,0);
+    padding: 0.2rem;
+    flex: 1;
+    font-size: 0.4rem;
+}
+
+/* --------------------- Batch tag 105x74mm --------------------- */
+
+.rect-tag-wrapper.rect-105x74 {
+    height: 7.2rem;
+    width: 10.3rem;
+}
+
+.rect-105x74 .qr-code-section {
+    width: 4.23rem;
+    height: 4.23rem;
+}
+
+.rect-105x74 .qr-code-section img {
+    width: 4.23rem;
+    height: 4.23rem;
+}
+
+.rect-105x74 .info-section h1 {
+    font-size: 0.3rem;
+    max-height: 1.4rem;
+}
+
+.rect-105x74 .info-table {
+    font-size: 0.25rem;
+}
+
+.rect-105x74 .info-table p {
+    max-height: 0.35rem;
+}
+
+.rect-105x74 .middle-section {
+    padding: 0rem 0.2rem 0rem 0.2rem;
+    border-top: none;
+}
+
+.rect-105x74 .batch-info {
+    font-size: 0.3rem;
+}
+
+.rect-105x74 .batch-info p {
+    max-height: 0.4rem;
+}
+
+.rect-105x74 .elips {
+    max-width: 7.5rem;
+}
+
+.rect-105x74 .farmer-tech-manager {
+    display: none;
+}
+
+.rect-105x74 .farmer-certificate {
+    display: none;
+}
+
+.rect-105x74 .farmer-logo {
+    display: none;
+}
+
+.rect-105x74 .info-farmer-logo {
+    display: none;
+}
+
+.rect-105x74 .certificate-images {
+    padding: 0.1rem;
+}
+
+.rect-105x74 .certificate-image {
+    width: 1rem;
+    height: 0.5rem;
+}
+
+.rect-105x74 .fetaep-info {
+    padding: 0.1rem;
+    font-size: 0.2rem;
+}
+
+.rect-105x74 .bottom-section {
+    padding: 0.05rem;
+    font-size: 0.3rem;
+    border-top: none;
+}
+
+/* --------------------- Batch tag 105x74mm logo --------------------- */
+
+.rect-tag-wrapper.rect-105x74-logo {
+    height: 7.2rem;
+    width: 10.3rem;
+}
+
+.rect-105x74-logo .qr-code-section {
+    width: 4.23rem;
+    height: 4.23rem;
+}
+
+.rect-105x74-logo .qr-code-section img {
+    width: 4.23rem;
+    height: 4.23rem;
+}
+
+.rect-105x74-logo .info-section h1 {
+    font-size: 0.3rem;
+    max-height: 1.4rem;
+}
+
+.rect-105x74-logo .info-table {
+    font-size: 0.25rem;
+}
+
+.rect-105x74-logo .info-table p {
+    max-height: 0.35rem;
+}
+
+.rect-105x74-logo .middle-section {
+    padding: 0rem 0.2rem 0rem 0.2rem;
+    border-top: none;
+}
+
+.rect-105x74-logo .batch-info {
+    font-size: 0.3rem;
+}
+
+.rect-105x74-logo .batch-info p {
+    max-height: 0.4rem;
+}
+
+.rect-105x74-logo .elips {
+    max-width: 7.5rem;
+}
+
+.rect-105x74-logo .farmer-tech-manager {
+    display: none;
+}
+
+.rect-105x74-logo .farmer-certificate {
+    display: none;
+}
+
+.rect-105x74-logo .farmer-logo {
+    display: none;
+}
+
+.rect-105x74-logo .info-farmer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 2.5rem;
+    margin-top: 0.2rem;
+}
+
+.rect-105x74-logo .info-farmer-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.rect-105x74-logo .certificate-images {
+    padding: 0.1rem;
+}
+
+.rect-105x74-logo .certificate-image {
+    width: 1rem;
+    height: 0.5rem;
+}
+
+.rect-105x74-logo .fetaep-info {
+    padding: 0.1rem;
+    font-size: 0.2rem;
+}
+
+.rect-105x74-logo .bottom-section {
+    padding: 0.05rem;
+    font-size: 0.3rem;
+    border-top: none;
+}
+
+/* --------------------- Batch tag 105x60mm --------------------- */
+
+.rect-tag-wrapper.rect-105x65 {
+    height: 6.3rem;
+    width: 10.3rem;
+}
+
+.rect-105x65 .qr-code-section {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.rect-105x65 .qr-code-section img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.rect-105x65 .info-section h1 {
+    font-size: 0.3rem;
+    max-height: 1rem;
+}
+
+.rect-105x65 .info-table {
+    font-size: 0.3rem;
+}
+
+.rect-105x65 .info-table p {
+    max-height: 0.4rem;
+}
+
+.rect-105x65 .middle-section {
+    padding: 0rem 0.2rem 0rem 0.2rem;
+    border-top: none;
+    flex: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.rect-105x65 .batch-info {
+    font-size: 0.3rem;
+}
+
+.rect-105x65 .batch-info p {
+    max-height: 0.4rem;
+}
+
+.rect-105x65 .elips {
+  max-width: 7.5rem;
+}
+
+.rect-105x65 .farmer-certificate {
+    display: none;
+}
+
+.rect-105x65 .farmer-logo {
+    display: none;
+}
+
+.rect-105x65 .farmer-tech-manager {
+    display: none;
+}
+
+.rect-105x65 .certificate-images {
+    padding: 0.1rem;
+}
+
+.rect-105x65 .certificate-image {
+    width: 1rem;
+    height: 0.5rem;
+}
+
+.rect-105x65 .fetaep-info {
+    padding: 0.2rem;
+    font-size: 0.2rem;
+}
+
+.rect-105x65 .bottom-section {
+    padding: 0.05rem;
+    font-size: 0.3rem;
+    border-top: none;
+}
+
+/* --------------------- Batch tag 105x60mm logo --------------------- */
+
+.rect-tag-wrapper.rect-105x65-logo {
+    height: 6.3rem;
+    width: 10.3rem;
+}
+
+.rect-105x65-logo .qr-code-section {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.rect-105x65-logo .qr-code-section img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.rect-105x65-logo .info-section h1 {
+    font-size: 0.3rem;
+    max-height: 1rem;
+}
+
+.rect-105x65-logo .info-table {
+    font-size: 0.3rem;
+}
+
+.rect-105x65-logo .info-table p {
+    max-height: 0.4rem;
+}
+
+.rect-105x65-logo .middle-section {
+    padding: 0rem 0.2rem 0rem 0.2rem;
+    border-top: none;
+    flex: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.rect-105x65-logo .batch-info {
+    font-size: 0.3rem;
+}
+
+.rect-105x65-logo .batch-info p {
+    max-height: 0.4rem;
+}
+
+.rect-105x65-logo .elips {
+  max-width: 7.5rem;
+}
+
+.rect-105x65-logo .farmer-certificate {
+    display: none;
+}
+
+.rect-105x65-logo .farmer-logo {
+    display: none;
+}
+
+.rect-105x65-logo .info-farmer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 1.4rem;
+    margin-top: 0.2rem;
+}
+
+.rect-105x65-logo .info-farmer-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.rect-105x65-logo .farmer-tech-manager {
+    display: none;
+}
+
+.rect-105x65-logo .certificate-images {
+    padding: 0.1rem;
+}
+
+.rect-105x65-logo .certificate-image {
+    width: 1rem;
+    height: 0.5rem;
+}
+
+.rect-105x65-logo .fetaep-info {
+    padding: 0.2rem;
+    font-size: 0.2rem;
+}
+
+.rect-105x65-logo .bottom-section {
+    padding: 0.05rem;
+    font-size: 0.3rem;
+    border-top: none;
+}
+
+/* --------------------- Batch tag 70x50mm --------------------- */
+
+.rect-tag-wrapper.rect-70x50 {
+    height: 4.8rem;
+    width: 6.8rem;
+}
+
+.rect-70x50 .qr-code-section {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.rect-70x50 .qr-code-section img {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.rect-70x50 .info-section h1 {
+    font-size: 0.3rem;
+    max-height: 1rem;
+}
+
+.rect-70x50 .info-table {
+    font-size: 0.2rem;
+}
+
+.rect-70x50 .info-table p {
+    max-height: 0.3rem;
+}
+
+.rect-70x50 .batch-info {
+    font-size: 0.2rem;
+}
+
+.rect-70x50 .batch-info p {
+    max-height: 0.3rem;
+}
+
+.rect-70x50 .farmer-logo {
+    display: none;
+}
+
+.rect-70x50 .certificate-images {
+    padding: 0.1rem 0.4rem 0.1rem 0.1rem;
+}
+
+.rect-70x50 .certificate-image {
+    width: 0.8rem;
+    height: 0.4rem;
+}
+
+.rect-70x50 .fetaep-info {
+    padding: 0.1rem 0.1rem 0.1rem 0.4rem;
+    font-size: 0.15rem;
+}
+
+.rect-70x50 .fetaep-info p {
+    line-height: 1.2;
+}
+
+.rect-70x50 .middle-section {
+    border-top: 0;
+    padding: 0rem 0.2rem;
+}
+
+.rect-70x50 .bottom-section {
+    display: none;
+}
+
+.rect-70x50 .batch-images {
+    margin-bottom: 0.1rem;
+}
+
+.rect-70x50 .farmer-tech-manager {
+    display: none;
+}
+
+.rect-70x50 .farmer-certificate {
+    display: none;
+}
+
+.rect-70x50 .elips {
+    max-width: 4.5rem;
+}
+
+/* --------------------- Double rect tag --------------------- */
+
+.double-rect-tag {
+    transform: rotate(90deg);
+}
+
+.double-rect-tag .rect-tag-wrapper {
+    margin: initial;
+}
+
+.double-rect-tag-spacer {
+    height: 0.4rem;
+}
+
+.double-rect-tag-wrapper {
+    height: 6.8rem;
+    width: 10rem;
+}
+
+.double-rect-tag-wrapper.none {
+    display: none;
+}
+
+/* --------------------- Batch tag 50x50mm --------------------- */
+
+.square-tag-wrapper {
+    border: 0.025rem solid rgba(0,0,0);
+    border-radius: 0.48rem;
+    height: 4.8rem;
+    width: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.1rem;
+    margin: auto;
+    align-items: center;
+}
+
+.square-tag-wrapper.none {
+    display: none;
+}
+
+.square-tag-wrapper .qr-code-section {
+    font-size: 0.14rem;
+    width: 3.4rem;
+    height: 3.4rem;
+}
+
+.square-tag-wrapper .qr-code-section p {
+    display: none;
+}
+
+.square-tag-wrapper .qr-code-section img {
+    width: 3.4rem;
+    height: 3.4rem;
+}
+
+.square-tag-wrapper .info-section {
+    flex: 0;
+}
+
+.square-tag-wrapper .info-section h1 {
+    font-size: 0.25rem;
+    max-height: 0.6rem;
+}
+
+.square-tag-wrapper .batch-images {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.square-tag-wrapper .batch-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.8rem;
+    height: 0.4rem;
+}
+
+.square-tag-wrapper .batch-images img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.square-tag-wrapper .batch-images p {
+    display: none;
+}
+
+/* --------------------- Double square tag wrapper --------------------- */
+
+.double-square-tag-wrapper {
+    display: flex;
+}
+
+.double-square-tag-wrapper.none {
+    display: none;
+}
+
+.double-square-tag-wrapper-spacer {
+    width: 0.4rem;
+}
+
+/* --------------------- Button --------------------- */
+
+.buttons-section {
+    padding: 30px;
+    text-align: center;
+}
+
+.print-button {
+    border-radius: 3px;
+    font-family: Open Sans,Arial,sans-serif;
+    width: auto;
+    height: 50px;
+    padding: 0 16px;
+    font-size: 14.4px;
+    font-weight: 400;
+    display: inline-block;
+    background-color: #007d7e;
+    border: 1px solid #007d7e;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    -webkit-font-smoothing: auto;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    transition: background-color .1s ease;
+}
+
+.field-content {
+    -webkit-font-smoothing: antialiased;
+    font-family: Open Sans,Arial,sans-serif;
+    font-size: 12.8px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #262626;
+    list-style-type: none;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 400px;
+    padding-right: 0;
+    margin-right: 5px;
+}
+
+.input {
+    -webkit-font-smoothing: antialiased;
+    font-family: Open Sans,Arial,sans-serif;
+    font-size: 100%;
+    line-height: 24px;
+    color: #262626;
+    list-style-type: none;
+    clear: both;
+    position: relative;
+}
+
+.shape-selector {
+    -webkit-font-smoothing: antialiased;
+    list-style-type: none;
+    margin: 0;
+    vertical-align: baseline;
+    text-transform: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 400px;
+    font-family: Open Sans,Arial,sans-serif;
+    border: 1px solid #e6e6e6;
+    padding: 14.4px 19.2px;
+    background-color: #fafafa;
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 300;
+    transition: background-color .2s ease;
+}
+
+.input select~span:after {
+    border-radius: 0 6px 6px 0;
+    z-index: 0;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    bottom: 0;
+    width: 59px;
+    content: "\f107";
+    font: normal normal normal 17px/1 FontAwesome;
+    border: solid #e6e6e6;
+    border-width: 0 0 0 1px;
+    text-align: center;
+    font-size: 48px;
+    pointer-events: none;
+    color: #d9d9d9;
+    margin: 0 1px 1px 0;
+}
+
+@media (max-width: 768px) {
+    #main-content {
+        padding-right: 0px;
+    }
+
+    .buttons-section {
+        padding:  20px;
+    }
+
+    #tag-outer-wrapper {
+        max-width: calc(100vw - 15px);
+        display: block;
+    }
+
+    .print-button {
+        margin-top: 20px;
+        background-color: #F37E77;
+        width: 100%;
+        border-radius: 50px;
+        border-color: #F37E77;
+    }
+}
+

@@ -1,0 +1,8 @@
+.chained-multi-select label {
+	width: 100%;
+	font-weight: normal;
+}
+
+.chained-multi-select label input {
+	padding-right: 5px;
+}

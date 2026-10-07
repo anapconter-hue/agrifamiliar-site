@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Rastrear AgriFamiliar</title>
+<script>
+/*
+ * Endereços com identificador no caminho (como os dos QR Codes já impressos):
+ *   /etiqueta/<código>/            -> página pública da etiqueta
+ *   /etiqueta/imprimir/<código>/   -> impressão da etiqueta
+ *   /cadernos/imprimir/<código>/   -> impressão do caderno do campo
+ * O GitHub Pages responde esta página para caminhos que não existem como arquivo;
+ * aqui eles são encaminhados para a página certa, mantendo o código.
+ */
+(function () {
+  var path = window.location.pathname;
+  var rules = [
+    { re: /^(.*\/)etiqueta\/imprimir\/([0-9a-fA-F-]{36})\/?$/, to: "etiqueta/imprimir/" },
+    { re: /^(.*\/)etiqueta\/([0-9a-fA-F-]{36})\/?$/, to: "etiqueta/" },
+    { re: /^(.*\/)cadernos\/imprimir\/([0-9a-fA-F-]{36})\/?$/, to: "cadernos/imprimir/" }
+  ];
+  for (var i = 0; i < rules.length; i++) {
+    var m = rules[i].re.exec(path);
+    if (m) {
+      window.location.replace(m[1] + rules[i].to + "?id=" + m[2].toLowerCase());
+      return;
+    }
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.innerHTML = "<h1>Not Found</h1><p>The requested resource was not found on this server.</p>";
+  });
+})();
+</script>
+</head>
+<body></body>
+</html>

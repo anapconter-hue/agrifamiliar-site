@@ -1,0 +1,29 @@
+input:not([type=submit]):disabled,
+textarea:disabled,
+select:disabled {
+	background: #FFFFFF !important;
+	border: none !important;
+	opacity: 1;
+	resize: none;
+}
+
+input[type=file]:disabled {
+	opacity: 0;
+}
+
+select:disabled + span {
+	display: none !important;
+}
+
+.image_field.disabled .field-content {
+	border: none !important;
+}
+
+.image_field.disabled .field-content label,
+.image_field.disabled .field-content .input div {
+	display: none !important;
+}
+
+.date_field.disabled .input::before {
+	content: "" !important;
+}

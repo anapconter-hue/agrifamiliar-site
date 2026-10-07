@@ -1,0 +1,41 @@
+.multiple {
+	max-width: 1024px;;
+}
+
+.street {
+    width: 70%;
+}
+
+.street .field-content {
+    width: 70% !important;
+    max-width: initial;
+}
+
+.street label {
+    width: 23% !important;
+}
+
+.number {
+    width: 30%
+}
+
+.user-info .multiple > li {
+	border: none !important;
+	padding: 0px;
+}
+
+.user-info .multiple .controls {
+	display: none !important;
+}
+
+.user-info p.add {
+	display: none !important;
+}
+
+.chained_select_widget label {
+    padding-top: 1.2em;
+}
+
+li.latitude, li.longitude {
+	padding: 0px !important;
+}

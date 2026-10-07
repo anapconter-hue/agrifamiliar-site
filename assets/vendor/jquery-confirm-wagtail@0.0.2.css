@@ -1,0 +1,45 @@
+.jconfirm-box {
+	position: relative;
+	padding: 0px !important;
+}
+
+.jconfirm-content-pane {
+	padding: 15px 15px 0px 15px;
+}
+
+.jconfirm-title-c {
+	padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px !important;
+    background-color: #007d7e;
+    line-height: 1.3em;
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: "Open Sans", sans-serif;
+    color: #ffffff;
+}
+
+.jconfirm-title {
+	padding: .2em 0;
+}
+
+.jconfirm-buttons {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    float: none !important;
+    padding: 0 20px 10px 20px;
+}
+
+.jconfirm-buttons button {
+	flex-grow: 1;
+}
+
+.jconfirm-closeIcon {
+    color: white;
+    opacity: 1;
+    font-weight: bold;
+    top: 27px !important;
+    right: 20px !important;
+}

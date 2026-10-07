@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Vendor CSS -->
+        <link rel="stylesheet" href="../../assets/vendor/normalize@8.0.1.css">
+        <link rel="stylesheet"
+              href="../../assets/vendor/bootstrap@4.5.3.min.css">
+        <!-- Base CSS -->
+        <link rel="stylesheet" href="../../assets/css/base@0.0.1.css">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+              rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../../assets/img/favicon.ico?v=1" />
+        <title>
+            Rastrear AgriFamiliar
+        </title>
+  <link rel="stylesheet"
+        type="text/css"
+        href="../../assets/css/farm_journals_print@0.0.1.css">
+    </head>
+    <body>
+  <header id="main-header">
+    <img id="header-logo" src="../../assets/img/logo.svg">
+    <h1>Caderno de campo</h1>
+  </header>
+            <section id="main-content" class="container"></section>
+                <footer id="main-footer">
+                    <p>Sistema Rastrear AgriFamiliar</p>
+                    <p id="footer-contacts"></p>
+                </footer>
+            <script src="../../assets/vendor/jquery-3.5.1.slim.min.js"></script>
+            <script src="../../assets/vendor/bootstrap@4.5.3.bundle.min.js"></script>
+            <script src="../../js/config.js"></script>
+            <script src="../../js/core.js"></script>
+            <script src="../../js/api.js"></script>
+            <script src="../../js/seed.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+            <script src="../../js/backend-supabase.js"></script>
+            <script src="../../js/maps.js"></script>
+  <script type="text/javascript">
+  (function () {
+    var e = RA.esc;
+    document.getElementById("footer-contacts").textContent = RA.config.FOOTER_EXTERNAL;
+    function yesno(v) { return v ? "Sim" : "Não"; }
+    function dflt(v) { return v === null || v === undefined || v === "" ? "-" : v; }
+    function pyNum(v) { var n = Number(v); return Number.isInteger(n) ? n.toFixed(1) : String(n); }
+    function block(title, value) {
+      return '      <div class="content-info-block">\n' +
+             '        <div class="title">' + e(title) + '</div>\n' +
+             '        <div class="value">' + e(value) + '</div>\n' +
+             '      </div>\n';
+    }
+    function box(title, inner) {
+      return '  <div class="content-box">\n' +
+             '    <div class="content-title">\n' +
+             '      <p>' + e(title) + '</p>\n' +
+             '    </div>\n' +
+             '    <div class="content-value">\n' + inner + '    </div>\n' +
+             '  </div>\n';
+    }
+    function table(headers, rows) {
+      return '        <section id="table-section">\n          <table>\n            <thead>\n              <tr>\n' +
+        headers.map(function (h) { return '                <th>' + e(h) + '</th>\n'; }).join('') +
+        '              </tr>\n            </thead>\n            <tbody>\n' +
+        rows.map(function (r) {
+          return '                <tr>\n' + r.map(function (c) { return '                  <td>' + e(c) + '</td>\n'; }).join('') + '                </tr>\n';
+        }).join('') +
+        '            </tbody>\n          </table>\n        </section>\n';
+    }
+    function empty(text) { return '        <div class="empty-entry">' + e(text) + '</div>\n'; }
+
+    // farm_journals/templates/farm_journals/farm_journals_print.html
+    function render(j, entries) {
+      var farmer = j.farmer || {};
+      var farm = j.farm || {};
+      var h = '';
+      h += '  <!-- Produtor -->\n' + box("Produtor",
+        block("Nome", farmer.name) + block("CPF/CNPJ", RA.fmtCpfCnpj(farmer.cpf_cnpj)));
+      h += '  <!-- Talhão -->\n' + box("Talhão",
+        block("Data de criação", RA.fmtDate(j.creation_date)) +
+        block("Identificação do talhão", j.field_identification) +
+        block("Propriedade", farm.name) +
+        block("Área total (hectares)", farm.total_hectares === null || farm.total_hectares === undefined ? "None" : pyNum(farm.total_hectares).replace(".", ",")) +
+        block("Produto(s)", j.products.map(RA.api.str.productFullName).join(", ")) +
+        block("Cultura anterior", dflt(j.last_cultural_method)) +
+        block("Data de plantio", RA.fmtDate(j.plantation_date)) +
+        block("Data provável de colheita", dflt(RA.fmtDate(j.harvest_date))));
+      h += '  <!-- Preparo do solo - Operações realizadas -->\n' + box("Preparo do solo - Operações realizadas",
+        block("Subsolagem", yesno(j.has_subsolagem)) +
+        block("Aração", yesno(j.has_aracao)) +
+        block("Enxada rotativa", yesno(j.has_enxada_rotativa)) +
+        block("Gradagem com grade leve", yesno(j.has_gradagem_leve)) +
+        block("Gradagem com grade pesada", yesno(j.has_gradagem_pesada)) +
+        block("Gradagem com grade niveladora", yesno(j.has_gradagem_niveladora)) +
+        block("Outros", dflt(j.extra_soil_preparation_operation)));
+      h += '  <!-- Preparo do solo - Adoção de práticas conservacionistas -->\n' + box("Preparo do solo - Adoção de práticas conservacionistas",
+        block("Plantio em nível", yesno(j.has_plantio_nivel)) +
+        block("Terraços", yesno(j.has_terracos)) +
+        block("Adubação verde", yesno(j.has_adubacao_verde)) +
+        block("Rotação de culturas", yesno(j.has_rotacao_culturas)) +
+        block("Plantio direto", yesno(j.has_plantio_direto)) +
+        block("Outros", dflt(j.extra_soil_preparation_practice)));
+      h += '  <!-- Sementes e mudas -->\n' + box("Sementes e mudas",
+        block("Origem própria", yesno(j.has_origem_propria)) +
+        block("Origem de terceiros (local)", dflt(j.origem_terceiros)) +
+        block("Viveiro com tratamento térmico", yesno(j.has_tratamento_termico)));
+      h += '  <!-- Irrigação -->\n' + box("Irrigação",
+        block("Sistema de irrigação", dflt(j.irrigation_method)) +
+        block("Origem da água", dflt(j.water_source)));
+      h += '  <!-- Adubação -->\n' + box("Adubação", entries.fertilizing.length ?
+        table(["Data da aplicação", "Nome do produto/fórmula", "Dose", "Forma de aplicação", "Responsável pela aplicação", "Observação"],
+          entries.fertilizing.map(function (x) {
+            return [RA.fmtDate(x.application_date), x.formula_name, pyNum(x.dose).replace(".", ",") + " " + RA.api.unitDescription(x.unity), x.application_method, x.application_responsible, dflt(x.note)];
+          })) : empty("Não há registros de adubação para este talhão."));
+      h += '  <!-- Defensivos -->\n' + box("Defensivos", entries.pesticide.length ?
+        table(["Data", "Período de carência", "Praga ou doença alvo", "Nome do produto", "Dose", "Volume de calda", "Operador"],
+          entries.pesticide.map(function (x) {
+            return [RA.fmtDate(x.date), x.grace_period, x.target_disease, x.product_name, x.dose, x.volume, x.operator];
+          })) : empty("Não há registros de defensivos para este talhão."));
+      h += '  <!-- Colheita -->\n' + box("Colheita", entries.harvest.length ?
+        table(["Data", "Quantidade colhida", "Destino", "Responsável"],
+          entries.harvest.map(function (x) {
+            return [RA.fmtDate(x.date), x.amount, x.destination, x.responsible];
+          })) : empty("Não há registros de colheita para este talhão."));
+      h += '  <!-- Pós-colheita -->\n' + box("Pós-colheita", entries.postharvest.length ?
+        table(["Data", "Nome do produto aplicado", "Dose", "Período de carência", "Responsável"],
+          entries.postharvest.map(function (x) {
+            return [RA.fmtDate(x.date), x.product_name, x.dose, x.grace_period, x.responsible];
+          })) : empty("Não há registros de pós-colheita para este talhão."));
+      h += '  <!-- Croqui -->\n  <div class="content-page-break">\n' + box("Croqui",
+        (j.polygon && j.polygon.length ? '        <div id="croqui-map"></div>\n' : empty("O croqui do talhão não foi localizado no mapa pelo produtor."))) + '  </div>\n';
+      h += '  <!-- Assinaturas -->\n' + box("Assinaturas",
+        '      <div class="signature-wrapper">\n' +
+        '        <div class="signature">' + e(farmer.name) + ' (Produtor)</div>\n' +
+        '        <div class="signature">Responsável técnico</div>\n' +
+        '      </div>\n');
+      document.getElementById("main-content").innerHTML = h;
+
+      var done = Promise.resolve();
+      if (j.polygon && j.polygon.length) {
+        var el = document.getElementById("croqui-map");
+        el.style.margin = "auto";
+        done = RA.maps.croquiMap(el, j.polygon).then(function () { return RA.sleep(1500); });
+      }
+      // window.onload = function () { window.print(); };
+      done.then(function () { window.print(); });
+    }
+
+    var id = RA.idFromPath("/cadernos/imprimir/");
+    var notFound = function () {
+      document.body.innerHTML = "<h1>Not Found</h1><p>The requested resource was not found on this server.</p>";
+    };
+    if (!id || !RA.UUID_RE.test(id)) { notFound(); return; }
+    RA.api.ready().then(function () {
+      return RA.api.getFarmJournal(id);
+    }).then(function (j) {
+      if (!j) { notFound(); return; }
+      return Promise.all(["fertilizing", "pesticide", "harvest", "postharvest"].map(function (t) {
+        return RA.api.entries(t, j.id);
+      })).then(function (r) {
+        render(j, { fertilizing: r[0], pesticide: r[1], harvest: r[2], postharvest: r[3] });
+      });
+    }).catch(function (err) {
+      console.error(err);
+      notFound();
+    });
+  })();
+  </script>
+    </body>
+</html>

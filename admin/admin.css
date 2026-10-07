@@ -1,0 +1,14 @@
+/* core/wagtail_hooks.py (insert_global_admin_css): esconde a busca do menu */
+.nav-search {
+	display: none;
+}
+
+.xdsoft_datetimepicker {
+	z-index: 1000;
+}
+
+/* Aviso do modo local na recuperação de senha */
+.ra-local-note {
+	margin-top: 2em;
+	opacity: 0.85;
+}

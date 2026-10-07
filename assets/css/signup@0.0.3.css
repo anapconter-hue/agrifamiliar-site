@@ -1,0 +1,263 @@
+/*::: Steps */
+.app-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 8vh;
+    overflow-x: hidden;
+}
+
+.step {
+    display:flex;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.steps-wrapper {
+    display: flex;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+    align-self: flex-start;
+}
+
+/*::: General styles*/
+.buttons-wrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+select {
+    color: #8E8E8E;
+    height: calc(24px + 1.8em);
+}
+
+.buttons-wrapper button:only-child {
+  margin-left: auto;
+}
+
+.input {
+    margin-bottom: 15px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-row > *:not(:last-child) {
+    margin-right: 15px;
+}
+
+.flex1, .flex2, .flex3, .flex4 {
+    flex-basis: 0px;
+}
+
+.flex1 {
+    flex-grow: 1;
+}
+
+.flex2 {
+    flex-grow: 2;
+}
+
+.flex3 {
+    flex-grow: 3;
+}
+
+.flex4 {
+    flex-grow: 4;
+}
+
+.help-block {
+    font-weight: 600;
+}
+
+.help-block p {
+    margin-bottom: 0;
+}
+
+.help-critical:before, .help-info:before, .help-warning:before {
+    top: calc(50% - 0.5em);
+}
+
+/*:: App */
+
+/*::: Spinner */
+.spinner {
+    display: flex;
+}
+
+@-webkit-keyframes v-pulseStretchDelay {
+    0%, 80% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-opacity: 1;
+                opacity: 1;
+    }
+
+    45% {
+        -webkit-transform: scale(0.1);
+                transform: scale(0.1);
+        -webkit-opacity: 0.7;
+                opacity: 0.7;
+    }
+}
+
+@keyframes v-pulseStretchDelay {
+    0%, 80% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-opacity: 1;
+                opacity: 1;
+    }
+
+    45% {
+        -webkit-transform: scale(0.1);
+                transform: scale(0.1);
+        -webkit-opacity: 0.7;
+                opacity: 0.7;
+    }
+}
+
+/*::: Header */
+.header-component {
+    padding: 0px 20px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-component h1 {
+    font-size: 30px;
+    text-transform: none;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.header-component h3 {
+    color: #929292;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+.header-text {
+    margin-top: 40px;
+}
+
+/*::: Access data */
+.access-data {
+    width: 601px; /* IE 11 center fix */
+    max-width: 600px;
+    flex-grow: 1;
+}
+
+/*::: Address data */
+.address-data {
+    width: 601px; /* IE 11 center fix */
+    max-width: 600px;
+    flex-grow: 1;
+}
+
+.street-number {
+    max-width: 120px;
+}
+
+/*::: Plan selection / Payment method selection */
+.payment-method-selection, .plan-selection {
+    max-width: 100%;
+}
+
+/*::: Plan item / Payment method item */
+.plans-container, .payment-methods-container {
+    text-align: center;
+}
+
+.plan-wrapper, .payment-method-wrapper {
+    max-width: 400px;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: row;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 30px;
+    cursor: pointer;
+    border: 2px solid #fbfbfb;
+    margin: 15px;
+    text-align: left;
+}
+
+.payment-method-wrapper {
+    min-height: 90px;
+}
+
+.plan-wrapper:hover, .payment-method-wrapper:hover {
+    border-color: #007D7E;
+}
+
+.plan-wrapper:hover .radio-selection, .payment-method-wrapper:hover .radio-selection {
+    border-color: #007D7E;
+}
+
+.radio-selection {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #d9d9d9;
+    margin-right: 15px;
+}
+
+.plan-name, .payment-method-name {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.plan-short-description {
+    font-weight: 700;
+    font-size: 26px;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+.plan-description, .payment-method-description {
+    font-size: 14px;
+}
+
+.plan-wrapper.selected, .payment-method-wrapper.selected {
+    background: #F2FFFF;
+    border: 2px solid #007D7E;
+}
+
+.plan-wrapper.selected .radio-selection, .payment-method-wrapper.selected .radio-selection {
+    background: #007D7E;
+    border: 1px solid #007D7E;
+}
+
+/*:: Media queries */
+@media (max-width: 768px) { /* MD */
+    .side-decoration {
+        display: none;
+    }
+
+    .viewport {
+        max-width: 100vw;
+    }
+
+    .app-wrapper {
+        margin-top: 20px;
+    }
+
+    footer {
+        width: 100%;
+    }
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js" lang="pt-br" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title>Rastrear AF - Painel</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+
+    <link rel="stylesheet" href="../assets/wagtail/css/normalize.css" />
+    <link rel="stylesheet" href="../assets/wagtail/css/core.css" type="text/css" />
+    <!-- insert_global_admin_css: wagtailfontawesome e core/wagtail_hooks.py -->
+    <link rel="stylesheet" href="../assets/fontawesome/css/wagtailfontawesome.css">
+    <link rel="stylesheet" href="../assets/css/read_only_fields.css">
+    <link rel="stylesheet" href="../assets/css/chained_multi_select.css">
+    <link rel="stylesheet" href="../assets/css/custom_file_input.css">
+    <link rel="stylesheet" href="../assets/vendor/wagtailmodelchoosers.css">
+    <link rel="stylesheet" href="../assets/vendor/jquery-confirm@3.3.4.min.css">
+    <link rel="stylesheet" href="../assets/vendor/jquery-confirm-wagtail@0.0.2.css">
+    <link rel="stylesheet" href="../assets/vendor/vue-js-modal@1.3.34.css">
+    <!-- Estilos que no original só eram carregados em algumas páginas (ligados por admin/wagtail.js) -->
+    <link rel="stylesheet" data-css="login" href="../assets/wagtail/css/layouts/login.css" disabled>
+    <link rel="stylesheet" data-css="home" href="../assets/wagtail/css/layouts/home.css" disabled>
+    <link rel="stylesheet" data-css="editor" href="../assets/wagtail/css/layouts/page-editor.css" disabled>
+    <link rel="stylesheet" data-css="index" href="../assets/wagtail/modeladmin/index.css" disabled>
+    <link rel="stylesheet" data-css="datatable" href="../assets/vendor/wagtail-data-table@1.0.1.css" disabled>
+    <link rel="stylesheet" data-css="signup" href="../assets/css/signup@0.0.3.css" disabled>
+    <link rel="stylesheet" data-css="profileform" href="../assets/css/farmer_profile_form@0.0.1.css" disabled>
+    <link rel="stylesheet" data-css="journaledit" href="../assets/css/farm_journals_edit@0.0.1.css" disabled>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico?v=1" />
+</head>
+<body id="wagtail" class="focus-outline-on">
+    <div data-sprite></div>
+    <noscript class="capabilitymessage">
+        O JavaScript é necessário para usar o Wagtail, mas ele está desativado no momento.
+    </noscript>
+    <div id="root"></div>
+
+    <script src="../assets/wagtail/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="../assets/wagtail/js/vendor/jquery.datetimepicker.js"></script>
+    <script src="../assets/wagtail/js/vendor/jquery.autosize.js"></script>
+    <script src="../assets/wagtail/js/vendor/bootstrap-transition.js"></script>
+    <script src="../assets/wagtail/js/vendor/bootstrap-tab.js"></script>
+    <script src="../assets/vendor/jquery-confirm@3.3.4.min.js"></script>
+    <script src="../assets/vendor/jquery.inputmask@5.0.5.min.js"></script>
+    <script src="../assets/vendor/vue@2.6.12.min.js"></script>
+    <script src="../assets/vendor/vue-spinner.js"></script>
+    <script src="../assets/vendor/vue-data-table@1.0.2.js"></script>
+    <script src="../assets/vendor/vue-js-modal@1.3.34.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/core.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/seed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+    <script src="../js/backend-supabase.js"></script>
+    <script src="../js/maps.js"></script>
+    <script src="../js/localserver.js"></script>
+    <script src="../js/signup-routes.js"></script>
+    <script src="../assets/js/signup_templates.js"></script>
+    <script src="wagtail.js"></script>
+    <script src="../assets/wagtail/js/date-time-chooser.js"></script>
+    <script src="forms.js"></script>
+    <script src="modeladmin.js"></script>
+    <script src="models.js"></script>
+    <script src="pages.js"></script>
+    <script src="farmer.js"></script>
+    <script src="nested.js"></script>
+    <script src="routes.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

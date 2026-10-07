@@ -1,0 +1,184 @@
+<!doctype html>
+<html class="no-js" lang="pt-br" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title>Rastrear AF - Cadastro</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="../assets/wagtail/css/normalize.css" />
+    <link rel="stylesheet" href="../assets/wagtail/css/core.css" type="text/css" />
+    <style type="text/css">
+        .nav-search {
+            display: none;
+        }
+
+        .xdsoft_datetimepicker {
+            z-index: 1000;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/read_only_fields.css">
+    <!-- accounts/templates/accounts/signup_page.html (extra_css) -->
+    <style>
+        /*:: Skeleton */
+
+        .wrapper {
+            padding: 0px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            background: #ffffff;
+            height: initial;
+            min-height: 100%;
+        }
+
+        .side-decoration {
+            z-index: 100;
+            width: 400px;
+            background: #21736C;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #logo {
+            height: 150px;
+            position: fixed;
+            top: calc(50vh - 75px);
+        }
+
+        .viewport {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            max-width: calc(100vw - 400px);
+        }
+
+        footer {
+            text-align: center;
+            background: transparent;
+            color: black;
+            margin-left: 0px;
+            margin-right: 0px;
+            box-shadow: none;
+            position: initial;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../assets/css/signup@0.0.3.css">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico?v=1" />
+</head>
+<body id="wagtail" class=" focus-outline-on">
+    <div data-sprite></div>
+    <noscript class="capabilitymessage">
+        O JavaScript é necessário para usar o Wagtail, mas ele está desativado no momento.
+    </noscript>
+
+    <a class="skiplink button" href="#main" data-skiplink>Ir para o conteúdo principal</a>
+
+    <div class="wrapper">
+        <main class="content-wrapper">
+            <div class="side-decoration">
+                <img id="logo" src="../assets/img/logo.svg">
+            </div>
+            <div class="viewport">
+
+                <div id="app-entrypoint"></div>
+
+                <footer>
+                    <p>Sistema Rastrear AgriFamiliar</p>
+                    <p>Fone: (41) 3149-9200 | WhatsApp: (41) 99515-4564 | E-mail: <a href="mailto:rastrear@agrifamiliar.agr.br">rastrear@agrifamiliar.agr.br</a></p>
+                </footer>
+            </div>
+        </main>
+
+        <div id="signup-templates"></div>
+    </div>
+
+    <script src="../assets/wagtail/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/core.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/seed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+    <script src="../js/backend-supabase.js"></script>
+    <script src="../js/localserver.js"></script>
+    <script src="../js/signup-routes.js"></script>
+    <script src="../assets/js/signup_templates.js"></script>
+    <script>
+        // core/wagtail_hooks.py insert_global_admin_js
+        function getCSRFToken() {
+            return "local";
+        }
+        // {% include "accounts/includes/signup_templates.html" %}
+        document.getElementById("signup-templates").outerHTML = window.SIGNUP_TEMPLATES;
+        $(function () {
+            $("body").addClass("ready");
+        });
+    </script>
+
+    <!-- VueJS -->
+    <script type="text/javascript" src="../assets/vendor/vue@2.6.12.min.js"></script>
+
+    <!-- :: Template initialization (accounts/views/farmers.py signup_page) -->
+    <script>
+        var config = {
+            encryption_key: "",
+            plans: RA.api.getPlans(),
+            payment_methods: RA.config.SUBSCRIPTION_PAYMENT_METHODS
+        };
+        var MOCK = false;
+        window.confirmationURL = "/api/auth/signup/";
+        window.confirmText = "Confirmar cadastro";
+        window.steps = [
+            {
+                title: "Rastrear AgriFamiliar",
+                subtitle: "Controle e emissão de etiquetas para a sua produção",
+                text: "" +
+                    "<p>Para poder experimentar o <strong>Rastrear AgriFamiliar</strong> por <strong>30 dias grátis</strong>" +
+                    " precisamos de <strong>algumas informações</strong> para realizar o seu cadastro.</p>" +
+                    "<p>Informe os dados solicitados e aproveite os seus <strong>30 dias grátis!</strong>",
+                component: "access-data"
+            },
+            {
+                title: "Rastrear AgriFamiliar",
+                subtitle: "Controle e emissão de etiquetas para a sua produção",
+                text: "" +
+                    "<p>Para poder experimentar o <strong>Rastrear AgriFamiliar</strong> por <strong>30 dias grátis</strong>" +
+                    " precisamos de <strong>algumas informações</strong> para realizar o seu cadastro.</p>" +
+                    "<p>Informe os dados solicitados e aproveite os seus <strong>30 dias grátis!</strong>",
+                component: "address-data"
+            },
+            {
+                title: "Rastrear AgriFamiliar",
+                subtitle: "Controle e emissão de etiquetas para a sua produção",
+                text: "" +
+                    "<p>Ótimo! Agora você precisa aderir a um dos nossos <strong>planos de assinatura</strong>." +
+                    "<p>Não iremos realizar <strong>nenhuma cobrança</strong> durante o <strong>período gratuito</strong>.",
+                component: "plan-selection"
+            },
+            {
+                title: "Rastrear AgriFamiliar",
+                subtitle: "Controle e emissão de etiquetas para a sua produção",
+                text: "" +
+                    "<p>Estamos finalizando! Agora você precisa informar uma <strong>forma de pagamento</strong>." +
+                    "<p>A cobrança será realizada apenas no término do <strong>período gratuito</strong>, caso queria continuar utilizando o <strong>Rastrear AgriFamiliar</strong>.</p>" +
+                    "<p>Fique <strong>tranquilo</strong>, se você cancelar seu plano durante o período gratuito, não haverá cobrança.</p>",
+                "component":"payment-method-selection"
+            },
+            {
+                title: "Tudo certo!",
+                subtitle: "O seu cadastro foi realizado com sucesso",
+                text: "" +
+                    "<p>A partir de agora você já pode acessar o <strong>Rastrear AgriFamiliar</strong> e começar a <strong>emitir</strong> as suas <strong>etiquetas</strong>!</p>",
+                "component": "success-feedback"
+            },
+        ];
+    </script>
+
+    <!-- JS APP -->
+    <script type="text/javascript" src="../assets/js/signup@0.0.3.js"></script>
+</body>
+</html>

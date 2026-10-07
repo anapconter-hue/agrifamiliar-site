@@ -1,0 +1,121 @@
+.table-wrapper {
+	border-bottom: 1px dashed #d9d9d9;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: rgb(217, 217, 217);
+}
+.data-table-wrapper table {
+	-webkit-font-smoothing: antialiased;
+	font-family: Open Sans,Arial,sans-serif;
+	line-height: 1.5em;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: #262626;
+	font-size: 13px;
+	width: 100%;
+}
+.data-table-wrapper thead {
+	font-family: "Open Sans","Arial",sans-serif;
+	line-height: 1.5em;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 1.1em;
+	color: #262626;
+	border-bottom: 1px solid #e6e6e6;
+}
+.data-table-wrapper th {
+	font-family: "Open Sans","Arial",sans-serif;
+	line-height: 1.5em;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: #262626;
+	padding: .6em 1em;
+	vertical-align: top;
+	font-size: .9em;
+	text-align: left;
+	font-weight: 400;
+	white-space: nowrap;
+	text-transform: uppercase;
+	background-color: #fafafa;
+	padding-left: 25px;
+}
+.data-table-wrapper tbody {
+	font-family: "Open Sans", "Arial", sans-serif;
+	line-height: 1.5em;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: #262626;
+	font-size: 13px;
+	overflow: auto;
+	border: 0;
+}
+.data-table-wrapper tbody tr {
+	font-family: Open Sans,Arial,sans-serif;
+	line-height: 1.5em;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: #262626;
+	font-size: 13px;
+	border-top: 1px dashed #e6e6e6;
+}
+.data-table-wrapper tbody td {
+	-webkit-font-smoothing: antialiased;
+	font-family: Open Sans,Arial,sans-serif;
+	line-height: 1.5em;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: #262626;
+	font-size: 13px;
+	padding: 1.2em 1em;
+	vertical-align: top;
+	background-color: inherit;
+	padding-left: 25px;
+}
+.pagination {
+	margin-top: 3em;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	border:none;
+	padding-right: 50px;
+	padding-left: 50px;
+}
+.pagination .next, .pagination .prev {
+	flex-grow: 1;
+	text-align: left;
+	cursor: pointer;
+}
+.pagination .next {
+	text-align: right;
+}
+.data-table-wrapper .actions {
+	-webkit-font-smoothing: antialiased;
+	font-family: Open Sans,Arial,sans-serif;
+	line-height: 1.5em;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: #262626;
+	margin: 1em 0;
+	padding: 0 0 0 40px;
+	list-style-type: none;
+	padding-left: 0;
+	margin-top: .8em;
+	text-transform: uppercase;
+	margin-bottom: -.5em;
+	font-size: .8rem;
+	visibility: hidden;
+}
+
+.data-table-wrapper .actions > li {
+    float: left;
+    padding: 0 .5em 0 0;
+    margin: 0 0 .5em;
+}
+
+.data-table-wrapper .actions > li a {
+	cursor: pointer;
+}
+
+.data-table-wrapper tbody tr:hover ul.actions {
+	visibility: visible;
+}

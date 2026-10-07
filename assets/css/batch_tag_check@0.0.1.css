@@ -1,0 +1,24 @@
+p {
+	font-weight: 700;
+}
+
+form {
+	display: flex;
+	margin-top: 2em;
+}
+
+#main-content {
+	padding-top: 15vh
+}
+.check-wrapper {
+	max-width: 500px;
+	margin: auto;
+}
+
+form input {
+	margin-right: 1em;
+}
+
+.alert {
+	margin-top: 2em;
+}

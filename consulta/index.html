@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Vendor CSS -->
+        <link rel="stylesheet" href="../assets/vendor/normalize@8.0.1.css">
+        <link rel="stylesheet"
+              href="../assets/vendor/bootstrap@4.5.3.min.css">
+        <!-- Base CSS -->
+        <link rel="stylesheet" href="../assets/css/base@0.0.1.css">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+              rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../assets/img/favicon.ico?v=1" />
+        <title>
+            Rastrear AgriFamiliar
+        </title>
+        <link rel="stylesheet" type="text/css" href="../assets/css/batch_tag_check@0.0.1.css">
+    </head>
+    <body>
+                <header id="main-header">
+                    <img id="header-logo" src="../assets/img/logo.svg">
+                    <h1>Rastreamento de etiquetas</h1>
+                </header>
+            <section id="main-content" class="container">
+<div class="check-wrapper">
+	<p class="text-center">Para verificar a origem do produto, digite abaixo o código que encontra-se na etiqueta e clique em "Rastrear".</p>
+	<form action="" method="POST" id="check-form">
+		<input type="text" class="form-control" name="batch_tag_code" placeholder="Código">
+		<button type="submit" class="btn btn-primary">Rastrear</button>
+	</form>
+	<div class="alert alert-warning" id="check-error" style="display:none"></div>
+</div>
+            </section>
+                <footer id="main-footer">
+                    <p>Sistema Rastrear AgriFamiliar</p>
+                    <p id="footer-contacts"></p>
+                </footer>
+            <script src="../assets/vendor/jquery-3.5.1.slim.min.js"></script>
+            <script src="../assets/vendor/bootstrap@4.5.3.bundle.min.js"></script>
+            <script src="../js/config.js"></script>
+            <script src="../js/core.js"></script>
+            <script src="../js/api.js"></script>
+            <script src="../js/seed.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+            <script src="../js/backend-supabase.js"></script>
+            <script>
+            (function () {
+                document.getElementById("footer-contacts").textContent = RA.config.FOOTER_EXTERNAL;
+                var form = document.getElementById("check-form");
+                var err = document.getElementById("check-error");
+                // products/views.py BatchTagCheck.post
+                form.addEventListener("submit", function (ev) {
+                    ev.preventDefault();
+                    var code = form.batch_tag_code.value;
+                    if (!code) { err.style.display = "none"; return; }
+                    RA.api.ready().then(function () {
+                        return RA.api.getBatchTag(code.trim().toLowerCase());
+                    }).then(function (tag) {
+                        if (tag && tag.batch) {
+                            window.location.href = RA.url("etiqueta/?id=" + tag.id);
+                        } else {
+                            err.textContent = "Etiqueta não encontrada. Por favor, tente novamente.";
+                            err.style.display = "";
+                        }
+                    });
+                });
+            })();
+            </script>
+    </body>
+</html>
