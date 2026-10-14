@@ -27,10 +27,10 @@ window.RASTREAR_CONFIG = {
   INDEX_URL: "admin/",
 
   // Contatos (core_constants.dart e templates originais)
-  CONTACT_EMAIL: "rastrear@agrifamiliar.agr.br",
+  CONTACT_EMAIL: "contato@agrifamiliar.com",
   CONTACT_WHATSAPP: "(41) 98470-7225",
   FOOTER_EXTERNAL:
-    "Fone/WhatsApp: (41) 98470-7225 | E-mail: rastrear@agrifamiliar.agr.br | https://agrifamiliar.com",
+    "Fone/WhatsApp: (41) 98470-7225 | E-mail: contato@agrifamiliar.com | https://agrifamiliar.com",
   SIGNUP_FOOTER_PHONE: "(41) 3149-9200",
   SIGNUP_FOOTER_WHATSAPP: "(41) 99515-4564",
 
