@@ -15,21 +15,22 @@ window.RASTREAR_CONFIG = {
   SUPABASE_URL: "https://sgbluqhrgeazdficjjts.supabase.co",
   SUPABASE_KEY: "sb_publishable_ksPk7hmka75ufuvejkBx7w_2Wi9CrRq",
 
-  // Endereço público do sistema. É usado nos QR Codes das etiquetas
-  // (original: WEBSITE_DOMAIN = "https://rastrear.agrifamiliar.agr.br").
+  // Endereço público do sistema. É usado nos QR Codes das etiquetas e nos links
+  // dos e-mails (no original era "https://rastrear.agrifamiliar.agr.br").
   // Vazio = usa o endereço em que o site estiver aberto.
-  WEBSITE_DOMAIN: "",
+  WEBSITE_DOMAIN: "https://agrifamiliar.com",
 
   APP_VERSION: "1.3.1",
 
-  // Página para onde a raiz do site ("/") redireciona (INDEX_URL do original)
-  INDEX_URL: "https://agrifamiliar.agr.br/rastrear/",
+  // Página para onde a raiz do site ("/") leva. No original era a página da FETAEP
+  // (https://agrifamiliar.agr.br/rastrear/); agora abre o painel.
+  INDEX_URL: "admin/",
 
   // Contatos (core_constants.dart e templates originais)
   CONTACT_EMAIL: "rastrear@agrifamiliar.agr.br",
   CONTACT_WHATSAPP: "(41) 98470-7225",
   FOOTER_EXTERNAL:
-    "Fone/WhatsApp: (41) 98470-7225 | E-mail: rastrear@agrifamiliar.agr.br | https://rastrear.agrifamiliar.agr.br",
+    "Fone/WhatsApp: (41) 98470-7225 | E-mail: rastrear@agrifamiliar.agr.br | https://agrifamiliar.com",
   SIGNUP_FOOTER_PHONE: "(41) 3149-9200",
   SIGNUP_FOOTER_WHATSAPP: "(41) 99515-4564",
 

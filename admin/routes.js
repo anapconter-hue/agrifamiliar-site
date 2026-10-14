@@ -326,7 +326,7 @@
             card_brand: null,
             card_last_digits: null,
             current_period_end: "3000-01-01T00:00:00Z",
-            manage_url: "https://rastrear.agrifamiliar.agr.br/",
+            manage_url: "https://agrifamiliar.com/",
             can_manage_subscription: false,
             status_display: "Pagamento em dia"
           }
