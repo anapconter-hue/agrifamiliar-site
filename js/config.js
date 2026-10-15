@@ -22,9 +22,8 @@ window.RASTREAR_CONFIG = {
 
   APP_VERSION: "1.3.1",
 
-  // Página para onde a raiz do site ("/") leva. No original era a página da FETAEP
-  // (https://agrifamiliar.agr.br/rastrear/); agora abre o painel.
-  INDEX_URL: "admin/",
+  // A raiz do site ("/") é a página inicial copiada de https://agrifamiliar.com.br/ (index.html).
+  // No original ela redirecionava para a página da FETAEP (https://agrifamiliar.agr.br/rastrear/).
 
   // Contatos (core_constants.dart e templates originais)
   CONTACT_EMAIL: "contato@agrifamiliar.com",
