@@ -342,7 +342,10 @@
   // inline_panel.html + inline_panel_child.html (e read_only_inline_panel.html)
   Form.prototype.inline = function (p) {
     var self = this;
-    var rows = this.values[p.name] || [];
+    var rows = (this.values[p.name] || []).slice();
+    // BaseFormSet.total_form_count: mostra ao menos min_num formulários (o Wagtail usa extra=0),
+    // então um produtor sem propriedades já vê um formulário de propriedade em branco
+    while (rows.length < (p.minNum || 0)) rows.push({});
     var prefix = p.prefix || p.name;
     var html =
       '<input type="hidden" name="' + prefix + '-TOTAL_FORMS" value="' + rows.length + '" id="id_' + prefix + '-TOTAL_FORMS">' +

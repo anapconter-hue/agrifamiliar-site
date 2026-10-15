@@ -625,8 +625,15 @@
     var p0 = data.profile || {};
     if (!blank(p0.birth_date) && !api.isISODate(p0.birth_date)) addErr(errors, "profile.birth_date", api.INVALID_DATE);
 
+    // BaseFormSet.full_clean: formulários novos que ficaram em branco não contam para o mínimo
     var farms = (data.farms || []).filter(function (f) {
-      return !f._delete;
+      return (
+        !f._delete &&
+        (f.id ||
+          ["name", "street", "number", "extra", "neighborhood", "state_id", "city_id", "zip_code", "ccir", "total_hectares", "latitude", "longitude"].some(function (k) {
+            return !blank(f[k]);
+          }))
+      );
     });
     if (farms.length < 1) addErr(errors, "farms.__all__", "Por favor, envie 1 ou mais formulários.");
     (data.farms || []).forEach(function (f, i) {
